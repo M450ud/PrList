@@ -11407,8 +11407,7 @@
             {
                 "geosite": [
                     "category-ads-all",
-                    "category-ads-ir",
-                    "category-public-tracker"
+                    "category-ads-ir"
                 ],
                 "outbound": "block"
             },
