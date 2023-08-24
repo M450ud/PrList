@@ -1216,7 +1216,7 @@
                 "🇯🇵 Japan , Tokyo | 553"
             ],
             "url": "https:\/\/detectportal.firefox.com\/success.txt",
-            "interval": "60s",
+            "interval": "240s",
             "tolerance": 0
         },
         {
