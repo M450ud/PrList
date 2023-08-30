@@ -11363,11 +11363,11 @@
         "override_android_vpn": true,
         "final": "proxy",
         "geoip": {
-            "download_url": "https:\/\/github.com\/malikshi\/sing-box-geo\/releases\/latest\/download\/geoip.db",
+            "download_url": "https:\/\/cdn.jsdelivr.net\/gh\/Loyalsoldier\/v2ray-rules-dat@release\/geoip.dat",
             "download_detour": "direct"
         },
         "geosite": {
-            "download_url": "https:\/\/github.com\/malikshi\/v2ray-rules-dat\/releases\/latest\/download\/geosite.db",
+            "download_url": "https:\/\/cdn.jsdelivr.net\/gh\/Loyalsoldier\/v2ray-rules-dat@release\/geosite.dat",
             "download_detour": "direct"
         },
         "rules": [
