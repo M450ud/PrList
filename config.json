@@ -20,9 +20,7 @@
         "servers": [
             {
                 "address": [
-                    "https:\/\/9.9.9.9\/dns-query",
-                    "https:\/\/1.1.1.1\/dns-query",
-                    "https:\/\/mozilla.cloudflare-dns.com\/dns-query"
+                    "https:\/\/1.1.1.1\/dns-query"
                 ],
                 "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
@@ -30,10 +28,7 @@
             },
             {
                 "address": [
-                    "9.9.9.12",
-                    "9.9.9.13",
-                    "104.238.212.185",
-                    "4.2.2.4"
+                    "9.9.9.12"
                 ],
                 "address_resolver": "dns-local",
                 "detour": "direct",
