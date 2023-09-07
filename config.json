@@ -1,7 +1,8 @@
 {
     "log": {
         "disabled": false,
-        "level": "warning",
+        "level": "debug",
+        "output": "singbox.log",
         "timestamp": true
     },
     "ntp": {
