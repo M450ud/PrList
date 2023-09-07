@@ -22,13 +22,13 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
-                "tag": "dns-remote"
+                "tag": "CFDns"
             },
             {
                 "address": "https:\/\/162.159.61.4\/dns-query",
                 "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
-                "tag": "dns-remote"
+                "tag": "MozillaDNS"
             },
             {
                 "tag": "google",
@@ -43,7 +43,7 @@
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "ipv4_only",
-                "tag": "dns-direct"
+                "tag": "CHDNS"
             },
             {
                 "address": "https:\/\/doh-ch.blahdns.com\/dns-query",
