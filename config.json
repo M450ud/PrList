@@ -28,18 +28,18 @@
         "servers": [
             {
                 "address": "https:\/\/1.1.1.1\/dns-query",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "Cloudflare-DNS"
             },
             {
                 "address": "https:\/\/162.159.61.4\/dns-query",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "MozillaDNS"
             },
             {
                 "address": "9.9.9.12",
                 "detour": "direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "Quad9-DNS"
             },
 
@@ -47,7 +47,7 @@
                 "tag": "googleDNS",
                 "address": "tls:\/\/8.8.4.4",
                 "address_strategy": "prefer_ipv4",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "detour": "direct"
             },
             {
