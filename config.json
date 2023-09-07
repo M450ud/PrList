@@ -46,7 +46,7 @@
                 "tag": "CHDNS"
             },
             {
-                "address": "https:\/\/doh-ch.blahdns.com\/dns-query",
+                "address": "https:\/\/45.91.92.121\/dns-query",
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "ipv4_only",
