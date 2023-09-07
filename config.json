@@ -29,19 +29,16 @@
         "servers": [
             {
                 "address": "https:\/\/1.1.1.1\/dns-query",
-                "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
                 "tag": "Cloudflare-DNS"
             },
             {
                 "address": "https:\/\/162.159.61.4\/dns-query",
-                "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
                 "tag": "MozillaDNS"
             },
             {
                 "address": "9.9.9.12",
-                "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "ipv4_only",
                 "tag": "Quad9-DNS"
@@ -50,7 +47,6 @@
             {
                 "tag": "googleDNS",
                 "address": "tls:\/\/8.8.4.4",
-                "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "ipv4_only",
                 "detour": "direct"
