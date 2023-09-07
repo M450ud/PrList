@@ -4,15 +4,6 @@
         "level": "warning",
         "timestamp": true
     },
-    "ntp": {
-        "enabled": true,
-        "server": "time.nist.gov",
-        "server_port": 13,
-        "interval": "30m",
-        "connect_timeout": "10s",
-        "domain_strategy": "prefer_ipv4",
-        "detour": "direct"
-    },
     "experimental": {
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
