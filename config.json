@@ -6,8 +6,8 @@
     },
     "ntp": {
         "enabled": true,
-        "server": "129.6.15.28",
-        "server_port": 37,
+        "server": "time.nist.gov",
+        "server_port": 13,
         "interval": "30m",
         "detour": "direct",
     },
