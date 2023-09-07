@@ -20,14 +20,14 @@
         "servers": [
             {
                 "address": "https:\/\/1.1.1.1\/dns-query",
-                "address_resolver": "Quad9-DNS",
+                "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
                 "address": "https:\/\/9.9.9.9\/dns-query",
-                "address_resolver": "Quad9-DNS",
+                "address_resolver": "dnslocal",
                 "address_strategy": "prefer_ipv4",
                 "detour": "direct",
                 "strategy": "prefer_ipv4",
@@ -39,13 +39,6 @@
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
                 "tag": "Quad9-DNS"
-            },
-            {
-                "tag": "googleDNS",
-                "address": "tls:\/\/8.8.4.4",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4",
-                "detour": "direct"
             },
             {
                 "address": "local",
