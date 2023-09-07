@@ -32,7 +32,7 @@
             },
             {
                 "tag": "google",
-                "address": "tls:\/\/dns.google",
+                "address": "tls:\/\/8.8.4.4",
                 "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "ipv4_only",
