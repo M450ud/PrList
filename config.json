@@ -4,13 +4,19 @@
         "level": "warning",
         "timestamp": true
     },
+    "ntp": {
+        "enabled": true,
+        "server": "129.6.15.28",
+        "server_port": 37,
+        "interval": "30m"
+    },
     "experimental": {
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
             "external_ui": "yacd",
             "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
             "external_ui_download_detour": "direct",
-            "secret": "",
+            "secret": "singbox",
             "default_mode": "rule",
             "store_selected": true,
             "cache_file": "clash.db"
@@ -22,7 +28,7 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
-                "tag": "CFDns"
+                "tag": "Cloudflare-DNS"
             },
             {
                 "address": "https:\/\/162.159.61.4\/dns-query",
@@ -31,19 +37,11 @@
                 "tag": "MozillaDNS"
             },
             {
-                "tag": "google",
-                "address": "tls:\/\/8.8.4.4",
-                "address_resolver": "dns-local",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "ipv4_only",
-                "detour": "direct"
-            },
-            {
                 "address": "9.9.9.12",
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "ipv4_only",
-                "tag": "CHDNS"
+                "tag": "Quad9-DNS"
             },
             {
                 "address": "https:\/\/45.91.92.121\/dns-query",
@@ -51,6 +49,14 @@
                 "detour": "direct",
                 "strategy": "ipv4_only",
                 "tag": "dns-direct"
+            },
+            {
+                "tag": "googleDNS",
+                "address": "tls:\/\/8.8.4.4",
+                "address_resolver": "dns-local",
+                "address_strategy": "prefer_ipv4",
+                "strategy": "ipv4_only",
+                "detour": "direct"
             },
             {
                 "address": "local",
@@ -13512,6 +13518,7 @@
                 "geosite": [
                     "category-ads-all",
                     "category-ads-ir",
+                    "category-ads",
                     "category-public-tracker"
                 ],
                 "outbound": "block"
@@ -13522,11 +13529,12 @@
                     "ff00::\/8",
                     "10.10.34.34\/29"
                 ],
-                "outbound": "block",
                 "source_ip_cidr": [
                     "224.0.0.0\/3",
-                    "ff00::\/8"
-                ]
+                    "ff00::\/8",
+                    "10.10.34.34\/29"
+                ],
+                "outbound": "block"
             }
         ]
     }
