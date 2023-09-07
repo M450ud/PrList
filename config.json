@@ -8,7 +8,8 @@
         "enabled": true,
         "server": "129.6.15.28",
         "server_port": 37,
-        "interval": "30m"
+        "interval": "30m",
+        "detour": "direct",
     },
     "experimental": {
         "clash_api": {
