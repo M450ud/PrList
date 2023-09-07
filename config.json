@@ -26,9 +26,10 @@
             },
             {
                 "address": "https:\/\/9.9.9.9\/dns-query",
+                "address_resolver": "Quad9-DNS",
                 "address_strategy": "prefer_ipv4",
                 "detour": "direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-direct"
             },
             {
