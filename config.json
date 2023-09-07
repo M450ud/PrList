@@ -22,14 +22,14 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4",
+                "strategy": "ipv4_only",
                 "tag": "dns-remote"
             },
             {
                 "address": "9.9.9.9",
                 "address_strategy": "prefer_ipv4",
                 "detour": "direct",
-                "strategy": "prefer_ipv4",
+                "strategy": "ipv4_only",
                 "tag": "dns-direct"
             },
             {
