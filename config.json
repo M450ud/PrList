@@ -46,13 +46,7 @@
                 "strategy": "ipv4_only",
                 "tag": "Quad9-DNS"
             },
-            {
-                "address": "https:\/\/45.91.92.121\/dns-query",
-                "address_resolver": "dns-local",
-                "detour": "direct",
-                "strategy": "ipv4_only",
-                "tag": "dns-direct"
-            },
+
             {
                 "tag": "googleDNS",
                 "address": "tls:\/\/8.8.4.4",
