@@ -1,7 +1,7 @@
 {
     "log": {
         "disabled": false,
-        "level": "debug",
+        "level": "info",
         "timestamp": true
     },
     "experimental": {
@@ -25,7 +25,28 @@
                 "tag": "dns-remote"
             },
             {
+                "address": "https:\/\/162.159.61.4\/dns-query",
+                "address_resolver": "dns-direct",
+                "strategy": "ipv4_only",
+                "tag": "dns-remote"
+            },
+            {
+                "tag": "google",
+                "address": "tls:\/\/dns.google",
+                "address_resolver": "local",
+                "address_strategy": "prefer_ipv4",
+                "strategy": "ipv4_only",
+                "detour": "direct"
+            },
+            {
                 "address": "9.9.9.12",
+                "address_resolver": "dns-local",
+                "detour": "direct",
+                "strategy": "ipv4_only",
+                "tag": "dns-direct"
+            },
+            {
+                "address": "https:\/\/doh-ch.blahdns.com\/dns-query",
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "ipv4_only",
@@ -1200,8 +1221,8 @@
                 "🇳🇱 Netherlands , Amsterdam | 545"
             ],
             "url": "https:\/\/detectportal.firefox.com\/success.txt",
-            "interval": "120s",
-            "tolerance": 50
+            "interval": "300s",
+            "tolerance": 0
         },
         {
             "tag": "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20Ashburn_ | 1",
