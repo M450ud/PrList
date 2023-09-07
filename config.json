@@ -33,7 +33,7 @@
             {
                 "tag": "google",
                 "address": "tls:\/\/dns.google",
-                "address_resolver": "local",
+                "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "ipv4_only",
                 "detour": "direct"
