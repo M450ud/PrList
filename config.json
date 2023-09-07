@@ -5,7 +5,7 @@
         "timestamp": true
     },
     "ntp": {
-        "enabled": true,
+        "enabled": false,
         "server": "129.6.15.28",
         "server_port": 13,
         "interval": "30m",
