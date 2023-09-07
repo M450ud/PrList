@@ -6,7 +6,7 @@
     },
     "ntp": {
         "enabled": true,
-        "server": "time.nist.gov",
+        "server": "129.6.15.28",
         "server_port": 13,
         "interval": "30m",
         "connect_timeout": "10s",
@@ -41,12 +41,6 @@
                 "detour": "direct",
                 "strategy": "prefer_ipv4",
                 "tag": "Quad9-DNS"
-            },
-            {
-                "address": "https:\/\/45.91.92.121\/dns-query",
-                "detour": "direct",
-                "strategy": "prefer_ipv4",
-                "tag": "dns-direct"
             },
             {
                 "tag": "googleDNS",
