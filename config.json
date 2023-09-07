@@ -20,16 +20,18 @@
         "servers": [
             {
                 "address": "https:\/\/1.1.1.1\/dns-query",
-                "address_resolver": "DNSDirect",
+                "address_strategy": "prefer_ipv4",
+                "address-resolver": "dns-direct",
                 "strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
                 "address": "https:\/\/9.9.9.9\/dns-query",
-                "address_resolver": "dnslocal",
+                "address_strategy": "prefer_ipv4",
+                "address-resolver": "Quad9-DNS",
                 "detour": "direct",
                 "strategy": "ipv4_only",
-                "tag": "DNSDirect"
+                "tag": "dns-direct"
             },
             {
                 "address": "9.9.9.12",
