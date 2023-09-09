@@ -1217,7 +1217,7 @@
             ],
             "url": "https:\/\/detectportal.firefox.com\/success.txt",
             "interval": "1m",
-            "tolerance": 100
+            "tolerance": 50
         },
         {
             "tag": "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20Ashburn_ | 1",
