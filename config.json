@@ -13,7 +13,7 @@
             "secret": "",
             "default_mode": "rule",
             "store_selected": true,
-            "cache_file": "cache.db"
+            "cache_file": "SinbboxCache.db"
         }
     },
     "dns": {
