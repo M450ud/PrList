@@ -1216,7 +1216,7 @@
                 "🇳🇱 Netherlands , Amsterdam | 545"
             ],
             "url": "https:\/\/detectportal.firefox.com\/success.txt",
-            "interval": "1m",
+            "interval": "5m",
             "tolerance": 50
         },
         {
