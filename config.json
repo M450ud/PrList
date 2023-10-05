@@ -1635,9 +1635,9 @@
                 "🇭🇰 Hong Kong | 754",
                 "🇺🇸 United States , California | 755"
             ],
-            "url": "https:\/\/detectportal.firefox.com\/success.txt",
-            "interval": "3m",
-            "tolerance": 50
+            "url": "https:\/\/cp.cloudflare.com\/",
+            "interval": "5m",
+            "tolerance": 100
         },
         {
             "tag": "🇦🇪 United Arab Emirates , Dubai_ | 1",
