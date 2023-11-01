@@ -1181,9 +1181,9 @@
                 "🇸🇬 Singapore | 527",
                 "🇫🇷 France , Gravelines | 528"
             ],
-            "url": "https:\/\/cp.cloudflare.com\/",
-            "interval": "5m",
-            "tolerance": 100
+            "url": "https:\/\/www.gstatic.com\/generate_204",
+            "interval": "2m",
+            "tolerance": 30
         },
         {
             "tag": "🇧🇬 Bulgaria , Sofia_ | 1",
