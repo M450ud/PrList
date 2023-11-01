@@ -920,8 +920,8 @@
                 "🇺🇸 United States , New York | 397"
             ],
             "url": "https:\/\/cp.cloudflare.com\/",
-            "interval": "5m",
-            "tolerance": 100
+            "interval": "1m",
+            "tolerance": 10
         },
         {
             "tag": "🇬🇧 United Kingdom , London _ | 1",
