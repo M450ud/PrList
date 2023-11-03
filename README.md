@@ -7,4 +7,4 @@ A sing-box config which created using above configs is avalible at [config.json]
 
 ------------
 
-`Note that none of this confis is mine and i gathered them from TG channel or websites.`
+`Note that none of this confis is mine and i gathered them from TG channels or websites.`
