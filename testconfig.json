@@ -784,7 +784,8 @@
                 "geoip": [
                     "phishing",
                     "malware"
-                ]
+                ],
+                "outbound": "block"
             },
             {
                 "geosite": [
