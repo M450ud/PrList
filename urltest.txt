@@ -1,1 +1,2 @@
-Success
+This is a dummy text file for url test.
+Transferring data through proxy was successful.
