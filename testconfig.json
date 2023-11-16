@@ -17311,11 +17311,7 @@
             },
             {
                 "geoip": [
-                    "ir",
-                    "arvancloud",
-                    "derakcloud",
-                    "iranserver",
-                    "parspack"
+                    "ir"
                 ],
                 "ip_cidr": [
                     "192.168.0.0\/16"
@@ -17323,18 +17319,9 @@
                 "outbound": "bypass"
             },
             {
-                "geoip": [
-                    "phishing",
-                    "malware"
-                ],
-                "outbound": "block"
-            },
-            {
                 "geosite": [
                     "ir",
-                    "category-ir",
-                    "category-bank-ir",
-                    "category-gov-ir"
+                    "category-ir"
                 ],
                 "outbound": "bypass"
             },
@@ -17342,11 +17329,7 @@
                 "geosite": [
                     "category-ads-all",
                     "category-ads-ir",
-                    "category-ads",
-                    "category-public-tracker",
-                    "malware",
-                    "phishing",
-                    "cryptominers"
+                    "category-public-tracker"
                 ],
                 "outbound": "block"
             },
