@@ -14,7 +14,7 @@
             "secret": "",
             "default_mode": "rule",
             "store_selected": true,
-            "cache_file": "SingboxCache.db"
+            "cache_file": "familyCache.db"
         }
     },
     "dns": {
