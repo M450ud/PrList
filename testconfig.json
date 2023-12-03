@@ -1,4 +1,5 @@
-//This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer{
+//This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
+{
     "log": {
         "disabled": false,
         "level": "warning",
