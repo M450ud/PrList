@@ -64,7 +64,7 @@
         "reverse_mapping": true,
         "strategy": "ipv4_only",
         "disable_expire": true,
-        "independent_cache": false
+        "independent_cache": true
     },
     "inbounds": [
         {
