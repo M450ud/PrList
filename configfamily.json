@@ -20,7 +20,7 @@
     "dns": {
         "servers": [
             {
-                "address": "https:\/\/1.1.1.3\/dns-query",
+                "address": "1.1.1.3",
                 "address_resolver": "dns-direct",
                 "strategy": "ipv4_only",
                 "tag": "dns-remote"
