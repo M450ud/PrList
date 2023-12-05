@@ -878,7 +878,7 @@
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "10m",
-            "tolerance": 10
+            "tolerance": 5
         },
         {
             "tag": "mtn` | 1",
