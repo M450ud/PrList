@@ -877,7 +877,7 @@
                 "🇸🇬 Singapore | 383"
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
-            "interval": "10m",
+            "interval": "30m",
             "tolerance": 5
         },
         {
