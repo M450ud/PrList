@@ -22,14 +22,16 @@
             {
                 "address": "https:\/\/1.1.1.3\/dns-query",
                 "address_resolver": "dns-direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
+                "address_strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
                 "address": "1.0.0.3",
                 "address_resolver": "dns-local",
                 "detour": "direct",
-                "strategy": "ipv4_only",
+                "address_strategy": "prefer_ipv4",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-direct"
             },
             {
@@ -876,8 +878,8 @@
                 "🇹🇼 Taiwan , Taipei | 382",
                 "🇸🇬 Singapore | 383"
             ],
-            "url": "http:\/\/www.gstatic.com\/generate_204",
-            "interval": "10m",
+            "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
+            "interval": "30m",
             "tolerance": 10
         },
         {
