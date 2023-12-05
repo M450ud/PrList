@@ -3,7 +3,7 @@
     "log": {
         "disabled": true,
         "level": "trace",
-        "output": "box.log",
+        "output": "TestConfig.log",
         "timestamp": true
     },
     "experimental": {
