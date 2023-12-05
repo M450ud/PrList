@@ -23,6 +23,7 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "strategy": "prefer_ipv4",
+                "address_strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
@@ -30,6 +31,7 @@
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "prefer_ipv4",
+                "address_strategy": "prefer_ipv4",
                 "tag": "dns-direct"
             },
             {
