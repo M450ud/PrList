@@ -22,14 +22,14 @@
             {
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
                 "address": "tcp:\/\/1.1.1.1",
                 "address_resolver": "dns-local",
                 "detour": "direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-direct"
             },
             {
@@ -62,7 +62,7 @@
         ],
         "final": "dns-remote",
         "reverse_mapping": true,
-        "strategy": "ipv4_only",
+        "strategy": "prefer_ipv4",
         "disable_expire": true,
         "independent_cache": false
     },
