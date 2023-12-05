@@ -1,9 +1,9 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
 {
     "log": {
-        "disabled": false,
+        "disabled": true,
         "level": "trace",
-        "output": "TestConfig.log",
+        "output": "box.log",
         "timestamp": true
     },
     "experimental": {
