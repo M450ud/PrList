@@ -3,7 +3,7 @@
     "log": {
         "disabled": false,
         "level": "trace",
-        "output": "TestConfig.txt",
+        "output": "\/log\/TestConfig.txt",
         "timestamp": true
     },
     "experimental": {
