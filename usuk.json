@@ -22,14 +22,14 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-remote"
             },
             {
                 "address": "1.1.1.1",
                 "address_strategy": "prefer_ipv4",
                 "detour": "direct",
-                "strategy": "ipv4_only",
+                "strategy": "prefer_ipv4",
                 "tag": "dns-direct"
             },
             {
@@ -62,7 +62,7 @@
         ],
         "final": "dns-remote",
         "reverse_mapping": true,
-        "strategy": "ipv4_only",
+        "strategy": "prefer_ipv4",
         "disable_expire": true,
         "independent_cache": true
     },
@@ -242,8 +242,8 @@
                 "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 65",
                 "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20California | 66"
             ],
-            "url": "http:\/\/www.gstatic.com\/generate_204",
-            "interval": "2m",
+            "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
+            "interval": "30m",
             "tolerance": 10
         },
         {
