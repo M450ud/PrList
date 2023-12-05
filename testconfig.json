@@ -2,7 +2,8 @@
 {
     "log": {
         "disabled": false,
-        "level": "warning",
+        "level": "trace",
+        "output": "TestConfig.log",
         "timestamp": true
     },
     "experimental": {
