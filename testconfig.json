@@ -225,7 +225,11 @@
                 "🇳🇱 Netherlands , Amsterdam | 117",
                 "🇵🇰|PK|巴基斯坦|@wxgqlfx|17 | 118",
                 "🇹🇼 Taiwan , Taipei | 119",
-                "🇸🇬 Singapore | 120"
+                "🇸🇬 Singapore | 120",
+                "🇺🇸 United States , California | 121",
+                "🇺🇸 United States , California | 122",
+                "🇺🇸 United States , California | 123",
+                "🇺🇸 United States , California | 124"
             ]
         },
         {
@@ -351,7 +355,11 @@
                 "🇳🇱 Netherlands , Amsterdam | 117",
                 "🇵🇰|PK|巴基斯坦|@wxgqlfx|17 | 118",
                 "🇹🇼 Taiwan , Taipei | 119",
-                "🇸🇬 Singapore | 120"
+                "🇸🇬 Singapore | 120",
+                "🇺🇸 United States , California | 121",
+                "🇺🇸 United States , California | 122",
+                "🇺🇸 United States , California | 123",
+                "🇺🇸 United States , California | 124"
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "30m",
@@ -3451,6 +3459,98 @@
             "password": "1q7RNKaIk2wYO8fEPmEX0vWQ7Va+QRTA",
             "plugin": "",
             "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , California | 121",
+            "type": "tuic",
+            "server": "108.181.22.239",
+            "server_port": 26789,
+            "uuid": "a6ccf4f3-2b05-48ff-b440-2e3dce3e216a",
+            "password": null,
+            "congestion_control": "cubic",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
+            "tls": {
+                "enabled": true,
+                "disable_sni": false,
+                "server_name": "www.bing.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇺🇸 United States , California | 122",
+            "type": "tuic",
+            "server": "108.181.22.239",
+            "server_port": 12980,
+            "uuid": "ea8be14e-f82a-43ae-90b2-e110a7c7e164",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
+            "tls": {
+                "enabled": true,
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇺🇸 United States , California | 123",
+            "type": "tuic",
+            "server": "108.181.22.205",
+            "server_port": 50987,
+            "uuid": "d6214437-e1b5-4334-9090-8f66b78bea89",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
+            "tls": {
+                "enabled": true,
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
+            }
+        },
+        {
+            "tag": "🇺🇸 United States , California | 124",
+            "type": "tuic",
+            "server": "108.181.24.7",
+            "server_port": 23450,
+            "uuid": "3618921b-adeb-4bd3-a2a0-f98b72a674b1",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
+            "tls": {
+                "enabled": true,
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
+            }
         },
         {
             "tag": "direct",
