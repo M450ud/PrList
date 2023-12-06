@@ -881,7 +881,6 @@
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "30m",
             "tolerance": 10,
-            "idle_timeout": "5m",
             "interrupt_exist_connections": true
         },
         {
