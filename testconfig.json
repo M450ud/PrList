@@ -27,7 +27,7 @@
                 "tag": "dns-remote"
             },
             {
-                "address": "1.1.1.1:853",
+                "address": "1.1.1.1",
                 "address_resolver": "dns-local",
                 "detour": "direct",
                 "strategy": "prefer_ipv4",
@@ -65,6 +65,7 @@
         "final": "dns-remote",
         "reverse_mapping": true,
         "strategy": "prefer_ipv4",
+        "disable_cache": false,
         "disable_expire": true,
         "independent_cache": false
     },
