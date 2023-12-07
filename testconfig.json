@@ -376,7 +376,7 @@
                 "🇸🇪 Sweden , Stockholm | 131"
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
-            "interval": "30m",
+            "interval": "5m",
             "tolerance": 10,
             "interrupt_exist_connections": true
         },
