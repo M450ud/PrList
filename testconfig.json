@@ -1,4 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
+//Update Time: 14020917 - 1549
 {
     "log": {
         "level": "debug",
@@ -15,7 +16,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "1.1.1.1:853",
+                "address": "tcp:\/\/1.1.1.1",
                 "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
