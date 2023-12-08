@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//Update Time: 14020917 - 1549
+//Update Time: 14020917 - 1600
 {
     "log": {
         "level": "debug",
@@ -1211,8 +1211,8 @@
                 "-IRVLESS-Turbo8 | 558"
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/config.json",
-            "interval": "2m",
-            "tolerance": 10,
+            "interval": "10m",
+            "tolerance": 5,
             "interrupt_exist_connections": true
         },
         {
