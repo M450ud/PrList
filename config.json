@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time: 14020917 - 1627
+//  Update time:  14021917 - 1643
 {
     "log": {
         "level": "warning",
@@ -2166,7 +2166,10 @@
                 "geosite": [
                     "category-ads-all",
                     "category-ads-ir",
-                    "category-public-tracker"
+                    "category-public-tracker",
+                    "cryptominers",
+                    "phishing",
+                    "malware"
                 ],
                 "source_ip_cidr": [
                     "224.0.0.0\/3",
