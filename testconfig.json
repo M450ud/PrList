@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time: 14020918 - 2339
+//  Update time: 14020918 - 2341
 {
     "log": {
         "level": "debug",
@@ -1449,6 +1449,5 @@
             "path": "SingCache.db",
             "cache_id": "TestConfig",
             "store_fakeip": true
-        }
     }
 }
