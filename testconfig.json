@@ -5,6 +5,12 @@
         "level": "debug",
         "timestamp": true
     },
+    "cache_file": {
+        "enabled": true,
+        "path": "SingCache.db",
+        "cache_id": "TestConfig",
+        "store_fakeip": false
+    },
     "dns": {
         "servers": [
             {
