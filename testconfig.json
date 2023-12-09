@@ -1,15 +1,9 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time: 14020918 - 2319
+//  Update time: 14020918 - 2335
 {
     "log": {
         "level": "debug",
         "timestamp": true
-    },
-    "cache_file": {
-        "enabled": true,
-        "path": "SingCache.db",
-        "cache_id": "TestConfig",
-        "store_fakeip": false
     },
     "dns": {
         "servers": [
@@ -1450,5 +1444,11 @@
             "store_selected": true,
             "cache_file": "TestCache.db"
         }
+    "cache_file": {
+        "enabled": true,
+        "path": "SingCache.db",
+        "cache_id": "TestConfig",
+        "store_fakeip": false
+    },
     }
 }
