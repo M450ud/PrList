@@ -1,52 +1,40 @@
+//This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
+//  Update time:  14020919 -  2317
 {
     "log": {
-        "disabled": false,
-        "level": "warning",
+        "level": "debug",
         "timestamp": true
-    },
-    "experimental": {
-        "clash_api": {
-            "external_controller": "0.0.0.0:9090",
-            "external_ui": "yacd",
-            "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
-            "external_ui_download_detour": "direct",
-            "secret": "",
-            "default_mode": "rule",
-            "store_selected": true,
-            "cache_file": "usukcache.db"
-        }
     },
     "dns": {
         "servers": [
             {
+                "tag": "dns-remote",
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4",
-                "tag": "dns-remote"
+                "strategy": "prefer_ipv4"
             },
             {
-                "address": "1.1.1.1",
+                "tag": "dns-direct",
+                "address": "1.1.1.1:853",
+                "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
-                "detour": "direct",
                 "strategy": "prefer_ipv4",
-                "tag": "dns-direct"
+                "detour": "direct"
             },
             {
+                "tag": "dns-local",
                 "address": "local",
-                "detour": "direct",
-                "tag": "dns-local"
+                "detour": "direct"
             },
             {
-                "address": "rcode:\/\/success",
-                "tag": "dns-block"
+                "tag": "dns-block",
+                "address": "rcode:\/\/success"
             }
         ],
         "rules": [
             {
-                "domain_suffix": [
-                    "ir"
-                ],
+                "domain_suffix": "ir",
                 "server": "dns-direct"
             },
             {
@@ -63,38 +51,34 @@
         "final": "dns-remote",
         "reverse_mapping": true,
         "strategy": "prefer_ipv4",
-        "disable_expire": true,
-        "independent_cache": true
+        "disable_expire": true
     },
     "inbounds": [
         {
+            "type": "direct",
+            "tag": "dns-in",
             "listen": "0.0.0.0",
             "listen_port": 6450,
             "override_address": "1.1.1.1",
-            "override_port": 53,
-            "tag": "dns-in",
-            "type": "direct"
+            "override_port": 53
         },
         {
             "type": "tun",
             "tag": "tun-in",
             "interface_name": "tun0",
-            "inet4_address": "172.19.0.1\/30",
             "mtu": 9000,
+            "inet4_address": "172.19.0.1\/30",
             "auto_route": true,
             "strict_route": true,
             "stack": "mixed",
-            "sniff": true,
-            "sniff_override_destination": false
+            "sniff": true
         },
         {
-            "domain_strategy": "",
+            "type": "mixed",
+            "tag": "mixed-in",
             "listen": "0.0.0.0",
             "listen_port": 2080,
-            "sniff": true,
-            "sniff_override_destination": false,
-            "tag": "mixed-in",
-            "type": "mixed"
+            "sniff": true
         }
     ],
     "outbounds": [
@@ -103,301 +87,120 @@
             "type": "selector",
             "outbounds": [
                 "URL-TEST",
-                "🇬🇧 United Kingdom , Wales_ | 1",
-                "🇬🇧 United Kingdom , London_ | 2",
-                "🇬🇧 United Kingdom , London_ | 3",
-                "🇬🇧 United Kingdom , London_ | 4",
-                "🇬🇧 United Kingdom , Wales_ | 5",
-                "🇬🇧 United Kingdom , London_ | 6",
-                "🇬🇧 United Kingdom , London_ | 7",
-                "🇬🇧 United Kingdom , London_ | 8",
-                "🇬🇧 United Kingdom , London_ | 9",
-                "🇺🇸 United States , New York_ | 10",
-                "🇬🇧 United Kingdom , London _ | 11",
-                "🇬🇧 United Kingdom , London_ | 12",
-                "🇬🇧 United Kingdom , London_ | 13",
-                "🇬🇧 United Kingdom , London_ | 14",
-                "🇬🇧 United Kingdom , London_ | 15",
-                "🇬🇧 United Kingdom , London_ | 16",
-                "🇬🇧 United Kingdom , London_ | 17",
-                "🇬🇧 United Kingdom , Rainham_ | 18",
-                "🇬🇧 United Kingdom , Rainham_ | 19",
-                "🇬🇧 United Kingdom , Rainham_ | 20",
-                "🇬🇧 United Kingdom , Rainham_ | 21",
-                "🇬🇧 United Kingdom , Rainham_ | 22",
-                "🇬🇧 United Kingdom , Rainham_ | 23",
-                "🇬🇧 United Kingdom , London_ | 24",
-                "🇬🇧 United Kingdom , London_ | 25",
-                "🇬🇧 United Kingdom , Torquay _ | 26",
-                "🇬🇧 United Kingdom , Rainham_ | 27",
-                "🇬🇧 United Kingdom , London_ | 28",
-                "🇬🇧 United Kingdom , London_ | 29",
-                "🇬🇧 United Kingdom , London _ | 30",
-                "🇺🇸 United States , New Jersey_ | 31",
-                "🇺🇸 United States , California_ | 32",
-                "🇺🇸 United States , Maryland_ | 33",
-                "🇺🇸 United States , Maryland_ | 34",
-                "🇺🇸 United States , Maryland_ | 35",
-                "🇬🇧 United Kingdom , London_ | 36",
-                "🇬🇧 United Kingdom , London _ | 37",
-                "🇺🇸 United States , California_ | 38",
-                "🇺🇸 United States , New Jersey_ | 39",
-                "🇬🇧 United Kingdom , Wales_ | 40",
-                "🇬🇧 United Kingdom , Rainham_ | 41",
-                "🇺🇸 United States , Secaucus_ | 42",
-                "🇺🇸 United States , Washington D.C._ | 43",
-                "🇺🇸 United States , Dallas_ | 44",
-                "🇺🇸 United States , Dallas_ | 45",
-                "🇬🇧 United Kingdom , Rainham_ | 46",
-                "🇺🇸 United States , Georgia_ | 47",
-                "🇺🇸 United States , California_ | 48",
-                "🇬🇧 United Kingdom , London _ | 49",
-                "🇬🇧 United Kingdom , London _ | 50",
-                "🇺🇸 United States , California_ | 51",
-                "🇬🇧 United Kingdom , London _ | 52",
-                "🇬🇧 United Kingdom , Rainham_ | 53",
-                "🇬🇧 United Kingdom , London_ | 54",
-                "🇬🇧 United Kingdom , London _ | 55",
-                "🇺🇸 United States , Ashburn_ | 56",
-                "🇬🇧 United Kingdom , London _ | 57",
-                "🇺🇸 United States , Maryland_ | 58",
-                "🇺🇸 United States , Maryland_ | 59",
-                "🇬🇧 United Kingdom , London _ | 60",
-                "🇺🇸 United States , California_ | 61",
-                "🇬🇧 United Kingdom , London_ | 62",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 63",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20Rainham_ | 64",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 65",
-                "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20California | 66"
+                "🇬🇧 United Kingdom , London | 1",
+                "🇬🇧 United Kingdom , London | 2",
+                "🇬🇧 United Kingdom , London | 3",
+                "🇬🇧 United Kingdom , London | 4",
+                "🇬🇧 United Kingdom , London | 5",
+                "🇬🇧 United Kingdom , London | 6",
+                "🇬🇧 United Kingdom , London | 7",
+                "🇬🇧 United Kingdom , London | 8",
+                "🇬🇧 United Kingdom , London | 9",
+                "🇬🇧 United Kingdom , London | 10",
+                "🇬🇧 United Kingdom , London | 11",
+                "🇬🇧 United Kingdom , London | 12",
+                "🇬🇧 United Kingdom , London | 13",
+                "🇬🇧 United Kingdom , London | 14",
+                "🇬🇧 United Kingdom , London | 15",
+                "🇬🇧 United Kingdom , London  | 16",
+                "🇬🇧 United Kingdom , London  | 17",
+                "🇬🇧 United Kingdom , London  | 18",
+                "🇬🇧 United Kingdom , London  | 19",
+                "🇬🇧 United Kingdom , London  | 20",
+                "🇬🇧 United Kingdom , London  | 21",
+                "🇬🇧 United Kingdom , London  | 22",
+                "🇬🇧 United Kingdom , Rainham | 23",
+                "🇬🇧 United Kingdom , Rainham | 24",
+                "🇬🇧 United Kingdom , Rainham | 25",
+                "🇬🇧 United Kingdom , Rainham | 26",
+                "🇬🇧 United Kingdom , Rainham | 27",
+                "🇬🇧 United Kingdom , Rainham | 28",
+                "🇬🇧 United Kingdom , Rainham | 29",
+                "🇬🇧 United Kingdom , Rainham | 30",
+                "🇬🇧 United Kingdom , Torquay  | 31",
+                "🇬🇧 United Kingdom , Wales | 32",
+                "🇺🇸 United States , Ashburn | 33",
+                "🇺🇸 United States , California | 34",
+                "🇺🇸 United States , California | 35",
+                "🇺🇸 United States , California | 36",
+                "🇺🇸 United States , California | 37",
+                "🇺🇸 United States , California | 38",
+                "🇺🇸 United States , California | 39",
+                "🇺🇸 United States , California | 40",
+                "🇺🇸 United States , Dallas | 41",
+                "🇺🇸 United States , Dallas | 42",
+                "🇺🇸 United States , Georgia | 43",
+                "🇺🇸 United States , Maryland | 44",
+                "🇺🇸 United States , Maryland | 45",
+                "🇺🇸 United States , Maryland | 46",
+                "🇺🇸 United States , New Jersey | 47",
+                "🇺🇸 United States , New Jersey | 48",
+                "🇺🇸 United States , Secaucus | 49",
+                "🇺🇸 United States , Washington D.C. | 50"
             ]
         },
         {
             "tag": "URL-TEST",
             "type": "urltest",
             "outbounds": [
-                "🇬🇧 United Kingdom , Wales_ | 1",
-                "🇬🇧 United Kingdom , London_ | 2",
-                "🇬🇧 United Kingdom , London_ | 3",
-                "🇬🇧 United Kingdom , London_ | 4",
-                "🇬🇧 United Kingdom , Wales_ | 5",
-                "🇬🇧 United Kingdom , London_ | 6",
-                "🇬🇧 United Kingdom , London_ | 7",
-                "🇬🇧 United Kingdom , London_ | 8",
-                "🇬🇧 United Kingdom , London_ | 9",
-                "🇺🇸 United States , New York_ | 10",
-                "🇬🇧 United Kingdom , London _ | 11",
-                "🇬🇧 United Kingdom , London_ | 12",
-                "🇬🇧 United Kingdom , London_ | 13",
-                "🇬🇧 United Kingdom , London_ | 14",
-                "🇬🇧 United Kingdom , London_ | 15",
-                "🇬🇧 United Kingdom , London_ | 16",
-                "🇬🇧 United Kingdom , London_ | 17",
-                "🇬🇧 United Kingdom , Rainham_ | 18",
-                "🇬🇧 United Kingdom , Rainham_ | 19",
-                "🇬🇧 United Kingdom , Rainham_ | 20",
-                "🇬🇧 United Kingdom , Rainham_ | 21",
-                "🇬🇧 United Kingdom , Rainham_ | 22",
-                "🇬🇧 United Kingdom , Rainham_ | 23",
-                "🇬🇧 United Kingdom , London_ | 24",
-                "🇬🇧 United Kingdom , London_ | 25",
-                "🇬🇧 United Kingdom , Torquay _ | 26",
-                "🇬🇧 United Kingdom , Rainham_ | 27",
-                "🇬🇧 United Kingdom , London_ | 28",
-                "🇬🇧 United Kingdom , London_ | 29",
-                "🇬🇧 United Kingdom , London _ | 30",
-                "🇺🇸 United States , New Jersey_ | 31",
-                "🇺🇸 United States , California_ | 32",
-                "🇺🇸 United States , Maryland_ | 33",
-                "🇺🇸 United States , Maryland_ | 34",
-                "🇺🇸 United States , Maryland_ | 35",
-                "🇬🇧 United Kingdom , London_ | 36",
-                "🇬🇧 United Kingdom , London _ | 37",
-                "🇺🇸 United States , California_ | 38",
-                "🇺🇸 United States , New Jersey_ | 39",
-                "🇬🇧 United Kingdom , Wales_ | 40",
-                "🇬🇧 United Kingdom , Rainham_ | 41",
-                "🇺🇸 United States , Secaucus_ | 42",
-                "🇺🇸 United States , Washington D.C._ | 43",
-                "🇺🇸 United States , Dallas_ | 44",
-                "🇺🇸 United States , Dallas_ | 45",
-                "🇬🇧 United Kingdom , Rainham_ | 46",
-                "🇺🇸 United States , Georgia_ | 47",
-                "🇺🇸 United States , California_ | 48",
-                "🇬🇧 United Kingdom , London _ | 49",
-                "🇬🇧 United Kingdom , London _ | 50",
-                "🇺🇸 United States , California_ | 51",
-                "🇬🇧 United Kingdom , London _ | 52",
-                "🇬🇧 United Kingdom , Rainham_ | 53",
-                "🇬🇧 United Kingdom , London_ | 54",
-                "🇬🇧 United Kingdom , London _ | 55",
-                "🇺🇸 United States , Ashburn_ | 56",
-                "🇬🇧 United Kingdom , London _ | 57",
-                "🇺🇸 United States , Maryland_ | 58",
-                "🇺🇸 United States , Maryland_ | 59",
-                "🇬🇧 United Kingdom , London _ | 60",
-                "🇺🇸 United States , California_ | 61",
-                "🇬🇧 United Kingdom , London_ | 62",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 63",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20Rainham_ | 64",
-                "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 65",
-                "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20California | 66"
+                "🇬🇧 United Kingdom , London | 1",
+                "🇬🇧 United Kingdom , London | 2",
+                "🇬🇧 United Kingdom , London | 3",
+                "🇬🇧 United Kingdom , London | 4",
+                "🇬🇧 United Kingdom , London | 5",
+                "🇬🇧 United Kingdom , London | 6",
+                "🇬🇧 United Kingdom , London | 7",
+                "🇬🇧 United Kingdom , London | 8",
+                "🇬🇧 United Kingdom , London | 9",
+                "🇬🇧 United Kingdom , London | 10",
+                "🇬🇧 United Kingdom , London | 11",
+                "🇬🇧 United Kingdom , London | 12",
+                "🇬🇧 United Kingdom , London | 13",
+                "🇬🇧 United Kingdom , London | 14",
+                "🇬🇧 United Kingdom , London | 15",
+                "🇬🇧 United Kingdom , London  | 16",
+                "🇬🇧 United Kingdom , London  | 17",
+                "🇬🇧 United Kingdom , London  | 18",
+                "🇬🇧 United Kingdom , London  | 19",
+                "🇬🇧 United Kingdom , London  | 20",
+                "🇬🇧 United Kingdom , London  | 21",
+                "🇬🇧 United Kingdom , London  | 22",
+                "🇬🇧 United Kingdom , Rainham | 23",
+                "🇬🇧 United Kingdom , Rainham | 24",
+                "🇬🇧 United Kingdom , Rainham | 25",
+                "🇬🇧 United Kingdom , Rainham | 26",
+                "🇬🇧 United Kingdom , Rainham | 27",
+                "🇬🇧 United Kingdom , Rainham | 28",
+                "🇬🇧 United Kingdom , Rainham | 29",
+                "🇬🇧 United Kingdom , Rainham | 30",
+                "🇬🇧 United Kingdom , Torquay  | 31",
+                "🇬🇧 United Kingdom , Wales | 32",
+                "🇺🇸 United States , Ashburn | 33",
+                "🇺🇸 United States , California | 34",
+                "🇺🇸 United States , California | 35",
+                "🇺🇸 United States , California | 36",
+                "🇺🇸 United States , California | 37",
+                "🇺🇸 United States , California | 38",
+                "🇺🇸 United States , California | 39",
+                "🇺🇸 United States , California | 40",
+                "🇺🇸 United States , Dallas | 41",
+                "🇺🇸 United States , Dallas | 42",
+                "🇺🇸 United States , Georgia | 43",
+                "🇺🇸 United States , Maryland | 44",
+                "🇺🇸 United States , Maryland | 45",
+                "🇺🇸 United States , Maryland | 46",
+                "🇺🇸 United States , New Jersey | 47",
+                "🇺🇸 United States , New Jersey | 48",
+                "🇺🇸 United States , Secaucus | 49",
+                "🇺🇸 United States , Washington D.C. | 50"
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
-            "interval": "30m",
-            "tolerance": 10
+            "interval": "5m",
+            "tolerance": 100,
+            "interrupt_exist_connections": true
         },
         {
-            "tag": "🇬🇧 United Kingdom , Wales_ | 1",
-            "type": "shadowsocks",
-            "server": "52.142.191.152",
-            "server_port": 20168,
-            "method": "chacha20-ietf-poly1305",
-            "password": "iuzmCRsJ378MsDchtim4u8",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 2",
-            "type": "shadowsocks",
-            "server": "9.vmessprotocol.join.telegram-vmessprotocol-channel.space",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "mps3FwmDjLrWaOVg",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 3",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1967.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Bog0ELmMM9DSxDdQ",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 4",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1905.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Wales_ | 5",
-            "type": "shadowsocks",
-            "server": "52.142.191.186",
-            "server_port": 54452,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ftCnIAAQAsscwLno5J2cqd",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 6",
-            "type": "shadowsocks",
-            "server": "20.vmessprotocol.telegram-vmessprotocol-channel.space",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 7",
-            "type": "shadowsocks",
-            "server": "11.vmessprotocol.telegram-vmessprotocol-channel.space",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 8",
-            "type": "shadowsocks",
-            "server": "195.181.165.151",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 9",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1913.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , New York_ | 10",
-            "type": "shadowsocks",
-            "server": "89.187.179.192",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 11",
-            "type": "shadowsocks",
-            "server": "series-a2.samanehha.co",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "mps3FwmDjLrWaOVg",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 12",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1960.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Bog0ELmMM9DSxDdQ",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 13",
-            "type": "shadowsocks",
-            "server": "fast_2ray_telchannelll.fast2rayy.eu.org",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Bog0ELmMM9DSxDdQ",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 14",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1887.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 15",
-            "type": "shadowsocks",
-            "server": "freeiranwebtest.ddns.net",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "W74XFALLLuw6m5IA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 16",
+            "tag": "🇬🇧 United Kingdom , London | 1",
             "type": "shadowsocks",
             "server": "www.outline.network.ak1940.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
             "server_port": 443,
@@ -407,457 +210,7 @@
             "plugin_opts": ""
         },
         {
-            "tag": "🇬🇧 United Kingdom , London_ | 17",
-            "type": "shadowsocks",
-            "server": "51.142.92.199",
-            "server_port": 44934,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cg9gKWbWgJ8aj3FfUN6Ztu",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 18",
-            "type": "shadowsocks",
-            "server": "57.128.141.15",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 19",
-            "type": "shadowsocks",
-            "server": "198.244.231.27",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 20",
-            "type": "shadowsocks",
-            "server": "198.244.231.34",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 21",
-            "type": "shadowsocks",
-            "server": "198.244.231.25",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 22",
-            "type": "shadowsocks",
-            "server": "198.244.228.191",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 23",
-            "type": "shadowsocks",
-            "server": "198.244.231.74",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 24",
-            "type": "shadowsocks",
-            "server": "13.87.74.71",
-            "server_port": 14564,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Q1qlRknoN9PwGeExWVyTKg",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 25",
-            "type": "shadowsocks",
-            "server": "13.87.73.210",
-            "server_port": 13844,
-            "method": "chacha20-ietf-poly1305",
-            "password": "JknTODx7gzQqwJJeQlOuLq",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Torquay _ | 26",
-            "type": "shadowsocks",
-            "server": "77.72.5.113",
-            "server_port": 989,
-            "method": "aes-256-cfb",
-            "password": "f8f7aCzcPKbsF8p3",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 27",
-            "type": "shadowsocks",
-            "server": "51.68.214.226",
-            "server_port": 42128,
-            "method": "aes-256-gcm",
-            "password": "lcXSX8jZh2",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 28",
-            "type": "shadowsocks",
-            "server": "13.87.75.163",
-            "server_port": 21176,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5qDnlzxeePrpVGpklnsHCI",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 29",
-            "type": "shadowsocks",
-            "server": "13.87.75.155",
-            "server_port": 46130,
-            "method": "chacha20-ietf-poly1305",
-            "password": "mTypilmjidrr6dQYaOGHf7",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 30",
-            "type": "shadowsocks",
-            "server": "77.72.5.150",
-            "server_port": 989,
-            "method": "aes-256-cfb",
-            "password": "f8f7aCzcPKbsF8p3",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , New Jersey_ | 31",
-            "type": "shadowsocks",
-            "server": "194.116.173.21",
-            "server_port": 9038,
-            "method": "aes-256-cfb",
-            "password": "gYCYXfkUQEs2TaJQ",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , California_ | 32",
-            "type": "shadowsocks",
-            "server": "ak1820.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 2376,
-            "method": "aes-256-gcm",
-            "password": "faBAoD54k87UJG7",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Maryland_ | 33",
-            "type": "shadowsocks",
-            "server": "205.134.180.137",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "g13S7doXar0A",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Maryland_ | 34",
-            "type": "shadowsocks",
-            "server": "205.134.180.147",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "9Bvkw5aupNy8",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Maryland_ | 35",
-            "type": "shadowsocks",
-            "server": "205.134.180.145",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "hgLCgfLRgB6d",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 36",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1975.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 21176,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5qDnlzxeePrpVGpklnsHCI",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 37",
-            "type": "shadowsocks",
-            "server": "ak1661.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 8080,
-            "method": "aes-256-gcm",
-            "password": "KixLvKzwjekG00rm",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , California_ | 38",
-            "type": "shadowsocks",
-            "server": "171.22.254.17",
-            "server_port": 989,
-            "method": "aes-256-cfb",
-            "password": "f8f7aCzcPKbsF8p3",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , New Jersey_ | 39",
-            "type": "shadowsocks",
-            "server": "2508join.outline-vpn.cloud",
-            "server_port": 8388,
-            "method": "chacha20-ietf-poly1305",
-            "password": "YaXvybxrP9HL79Gfltym9bw\/5QIQAW\/f",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Wales_ | 40",
-            "type": "shadowsocks",
-            "server": "52.142.191.253",
-            "server_port": 26353,
-            "method": "chacha20-ietf-poly1305",
-            "password": "s6Pahzsk7CvAZsNhoHEx7u",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 41",
-            "type": "shadowsocks",
-            "server": "57.128.141.14",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Secaucus_ | 42",
-            "type": "shadowsocks",
-            "server": "5.8.41.89",
-            "server_port": 8388,
-            "method": "chacha20-ietf-poly1305",
-            "password": "YaXvybxrP9HL79Gfltym9bw\/5QIQAW\/f",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Washington D.C._ | 43",
-            "type": "shadowsocks",
-            "server": "185.123.101.241",
-            "server_port": 989,
-            "method": "aes-256-cfb",
-            "password": "f8f7aCzcPKbsF8p3",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Dallas_ | 44",
-            "type": "shadowsocks",
-            "server": "23.134.94.175",
-            "server_port": 8119,
-            "method": "aes-256-gcm",
-            "password": "cdBIDV42DCwnfIN",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Dallas_ | 45",
-            "type": "shadowsocks",
-            "server": "23.134.94.141",
-            "server_port": 6697,
-            "method": "aes-256-gcm",
-            "password": "TEzjfAYq2IjtuoS",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 46",
-            "type": "shadowsocks",
-            "server": "198.244.231.26",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Georgia_ | 47",
-            "type": "shadowsocks",
-            "server": "162.247.153.108",
-            "server_port": 28896,
-            "method": "chacha20-ietf-poly1305",
-            "password": "jFDpUoKUDZPEGTBJRiLZgo",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , California_ | 48",
-            "type": "shadowsocks",
-            "server": "154.3.8.151",
-            "server_port": 30067,
-            "method": "aes-256-gcm",
-            "password": "iUB0923RBA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 49",
-            "type": "shadowsocks",
-            "server": "145.239.6.202",
-            "server_port": 4444,
-            "method": "aes-256-gcm",
-            "password": "pKEW8JPByTVTLtM",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 50",
-            "type": "shadowsocks",
-            "server": "51.68.206.229",
-            "server_port": 8080,
-            "method": "aes-256-gcm",
-            "password": "KixLvKzwjekG00rm",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , California_ | 51",
-            "type": "shadowsocks",
-            "server": "24.199.103.101",
-            "server_port": 35678,
-            "method": "aes-256-gcm",
-            "password": "DuE6Gplaap",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 52",
-            "type": "shadowsocks",
-            "server": "ak1757.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 8080,
-            "method": "aes-256-gcm",
-            "password": "KixLvKzwjekG00rm",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , Rainham_ | 53",
-            "type": "shadowsocks",
-            "server": "198.244.231.28",
-            "server_port": 443,
-            "method": "aes-256-cfb",
-            "password": "asdKkaskJKfnsa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 54",
-            "type": "shadowsocks",
-            "server": "5.181.27.22",
-            "server_port": 39417,
-            "method": "aes-256-gcm",
-            "password": "DBCQf3EpGa",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 55",
-            "type": "shadowsocks",
-            "server": "ak1720.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 4444,
-            "method": "aes-256-gcm",
-            "password": "pKEW8JPByTVTLtM",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Ashburn_ | 56",
-            "type": "shadowsocks",
-            "server": "52.23.176.97",
-            "server_port": 34511,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5k55aIUjJaaQ8YjE6772wF",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 57",
-            "type": "shadowsocks",
-            "server": "ak1812.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 4444,
-            "method": "aes-256-gcm",
-            "password": "pKEW8JPByTVTLtM",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Maryland_ | 58",
-            "type": "shadowsocks",
-            "server": "205.134.180.151",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5cp9Z3iWnJZ2",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , Maryland_ | 59",
-            "type": "shadowsocks",
-            "server": "www.outline.network.ak1889.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5cp9Z3iWnJZ2",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London _ | 60",
-            "type": "shadowsocks",
-            "server": "ak1749.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
-            "server_port": 4444,
-            "method": "aes-256-gcm",
-            "password": "pKEW8JPByTVTLtM",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇺🇸 United States , California_ | 61",
-            "type": "shadowsocks",
-            "server": "103.172.116.79",
-            "server_port": 9044,
-            "method": "aes-256-cfb",
-            "password": "KBGjZYcy4SyRShmA",
-            "plugin": "",
-            "plugin_opts": ""
-        },
-        {
-            "tag": "🇬🇧 United Kingdom , London_ | 62",
+            "tag": "🇬🇧 United Kingdom , London | 2",
             "type": "shadowsocks",
             "server": "www.outline.network.ak1909.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
             "server_port": 443,
@@ -867,152 +220,555 @@
             "plugin_opts": ""
         },
         {
-            "tag": "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 63",
-            "type": "vless",
-            "server": "145.239.202.23",
-            "server_port": 2023,
-            "uuid": "726c07cf-7f1d-4881-ff60-6f7570849d5b",
-            "flow": "xtls-rprx-vision",
-            "packet_encoding": "xudp",
-            "multiplex": {
-                "enabled": false,
-                "protocol": "smux",
-                "max_streams": 32
-            },
+            "tag": "🇬🇧 United Kingdom , London | 3",
+            "type": "shadowsocks",
+            "server": "20.vmessprotocol.telegram-vmessprotocol-channel.space",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 4",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1905.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 5",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1960.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Bog0ELmMM9DSxDdQ",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 6",
+            "type": "shadowsocks",
+            "server": "51.142.92.199",
+            "server_port": 44934,
+            "method": "chacha20-ietf-poly1305",
+            "password": "cg9gKWbWgJ8aj3FfUN6Ztu",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 7",
+            "type": "shadowsocks",
+            "server": "11.vmessprotocol.telegram-vmessprotocol-channel.space",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 8",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1913.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 9",
+            "type": "shadowsocks",
+            "server": "13.87.73.210",
+            "server_port": 13844,
+            "method": "chacha20-ietf-poly1305",
+            "password": "JknTODx7gzQqwJJeQlOuLq",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 10",
+            "type": "shadowsocks",
+            "server": "13.87.75.163",
+            "server_port": 21176,
+            "method": "chacha20-ietf-poly1305",
+            "password": "5qDnlzxeePrpVGpklnsHCI",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 11",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1887.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "W74XFALLLuw6m5IA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 12",
+            "type": "shadowsocks",
+            "server": "fast_2ray_telchannelll.fast2rayy.eu.org",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Bog0ELmMM9DSxDdQ",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 13",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1975.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 21176,
+            "method": "chacha20-ietf-poly1305",
+            "password": "5qDnlzxeePrpVGpklnsHCI",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 14",
+            "type": "shadowsocks",
+            "server": "www.outline.network.ak1967.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Bog0ELmMM9DSxDdQ",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London | 15",
+            "type": "shadowsocks",
+            "server": "9.vmessprotocol.join.telegram-vmessprotocol-channel.space",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "mps3FwmDjLrWaOVg",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 16",
+            "type": "shadowsocks",
+            "server": "51.68.206.229",
+            "server_port": 8080,
+            "method": "aes-256-gcm",
+            "password": "KixLvKzwjekG00rm",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 17",
+            "type": "shadowsocks",
+            "server": "77.72.5.150",
+            "server_port": 989,
+            "method": "aes-256-cfb",
+            "password": "f8f7aCzcPKbsF8p3",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 18",
+            "type": "shadowsocks",
+            "server": "series-a2.samanehha.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "mps3FwmDjLrWaOVg",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 19",
+            "type": "shadowsocks",
+            "server": "ak1720.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 4444,
+            "method": "aes-256-gcm",
+            "password": "pKEW8JPByTVTLtM",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 20",
+            "type": "shadowsocks",
+            "server": "ak1661.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 8080,
+            "method": "aes-256-gcm",
+            "password": "KixLvKzwjekG00rm",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 21",
+            "type": "shadowsocks",
+            "server": "ak1812.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 4444,
+            "method": "aes-256-gcm",
+            "password": "pKEW8JPByTVTLtM",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , London  | 22",
+            "type": "shadowsocks",
+            "server": "145.239.6.202",
+            "server_port": 4444,
+            "method": "aes-256-gcm",
+            "password": "pKEW8JPByTVTLtM",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 23",
+            "type": "shadowsocks",
+            "server": "198.244.231.26",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 24",
+            "type": "shadowsocks",
+            "server": "57.128.141.15",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 25",
+            "type": "shadowsocks",
+            "server": "198.244.231.25",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 26",
+            "type": "shadowsocks",
+            "server": "198.244.231.34",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 27",
+            "type": "shadowsocks",
+            "server": "198.244.231.27",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 28",
+            "type": "shadowsocks",
+            "server": "198.244.228.191",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 29",
+            "type": "shadowsocks",
+            "server": "198.244.231.74",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Rainham | 30",
+            "type": "shadowsocks",
+            "server": "198.244.231.28",
+            "server_port": 443,
+            "method": "aes-256-cfb",
+            "password": "asdKkaskJKfnsa",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Torquay  | 31",
+            "type": "shadowsocks",
+            "server": "77.72.5.113",
+            "server_port": 989,
+            "method": "aes-256-cfb",
+            "password": "f8f7aCzcPKbsF8p3",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇬🇧 United Kingdom , Wales | 32",
+            "type": "shadowsocks",
+            "server": "52.142.191.152",
+            "server_port": 20168,
+            "method": "chacha20-ietf-poly1305",
+            "password": "iuzmCRsJ378MsDchtim4u8",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , Ashburn | 33",
+            "type": "shadowsocks",
+            "server": "52.23.176.97",
+            "server_port": 34511,
+            "method": "chacha20-ietf-poly1305",
+            "password": "5k55aIUjJaaQ8YjE6772wF",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , California | 34",
+            "type": "shadowsocks",
+            "server": "154.3.8.151",
+            "server_port": 30067,
+            "method": "aes-256-gcm",
+            "password": "iUB0923RBA",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , California | 35",
+            "type": "tuic",
+            "server": "108.181.22.239",
+            "server_port": 12980,
+            "uuid": "ea8be14e-f82a-43ae-90b2-e110a7c7e164",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
             "tls": {
                 "enabled": true,
-                "server_name": "flutter.dev",
-                "insecure": false,
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "U8JQJBdz6C3wKU78Kyzi7hGCkDy_3NRie2uh1qwdP2A",
-                    "short_id": "fafab539"
-                }
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
             }
         },
         {
-            "tag": "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20Rainham_ | 64",
-            "type": "vless",
-            "server": "54.38.144.4",
-            "server_port": 2053,
-            "uuid": "409f106a-b2f2-4416-b186-5429c9979cd9",
-            "flow": "",
-            "packet_encoding": "xudp",
-            "multiplex": {
-                "enabled": false,
-                "protocol": "smux",
-                "max_streams": 32
-            },
+            "tag": "🇺🇸 United States , California | 36",
+            "type": "shadowsocks",
+            "server": "171.22.254.17",
+            "server_port": 989,
+            "method": "aes-256-cfb",
+            "password": "f8f7aCzcPKbsF8p3",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , California | 37",
+            "type": "shadowsocks",
+            "server": "ak1820.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou",
+            "server_port": 2376,
+            "method": "aes-256-gcm",
+            "password": "faBAoD54k87UJG7",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , California | 38",
+            "type": "tuic",
+            "server": "108.181.22.205",
+            "server_port": 50987,
+            "uuid": "d6214437-e1b5-4334-9090-8f66b78bea89",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
             "tls": {
                 "enabled": true,
-                "server_name": "discordapp.com",
-                "insecure": false,
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
-                    "short_id": ""
-                }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "xyz",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
             }
         },
         {
-            "tag": "%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20,%20London_ | 65",
-            "type": "vless",
-            "server": "198.244.141.47",
-            "server_port": 2053,
-            "uuid": "b6e59757-0f97-481b-817e-16ee4c188292",
-            "flow": "",
-            "packet_encoding": "xudp",
-            "multiplex": {
-                "enabled": false,
-                "protocol": "smux",
-                "max_streams": 32
-            },
+            "tag": "🇺🇸 United States , California | 39",
+            "type": "tuic",
+            "server": "108.181.22.239",
+            "server_port": 26789,
+            "uuid": "a6ccf4f3-2b05-48ff-b440-2e3dce3e216a",
+            "password": null,
+            "congestion_control": "cubic",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
             "tls": {
                 "enabled": true,
-                "server_name": "discordapp.com",
-                "insecure": false,
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
-                    "short_id": ""
-                }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "xyz",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
+                "disable_sni": false,
+                "server_name": "www.bing.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
             }
         },
         {
-            "tag": "%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20California | 66",
-            "type": "vless",
-            "server": "142.171.123.109",
-            "server_port": 8443,
-            "uuid": "0e13099d-0a5a-4641-950a-03628980db36",
-            "flow": "xtls-rprx-vision",
-            "packet_encoding": "xudp",
-            "multiplex": {
-                "enabled": false,
-                "protocol": "smux",
-                "max_streams": 32
-            },
+            "tag": "🇺🇸 United States , California | 40",
+            "type": "tuic",
+            "server": "108.181.24.7",
+            "server_port": 23450,
+            "uuid": "3618921b-adeb-4bd3-a2a0-f98b72a674b1",
+            "password": null,
+            "congestion_control": "bbr",
+            "udp_relay_mode": "native",
+            "zero_rtt_handshake": false,
+            "heartbeat": "10s",
+            "network": "tcp",
             "tls": {
                 "enabled": true,
-                "server_name": "learn.microsoft.com",
-                "insecure": false,
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "16MhqclNVsYnxzGr2o22nzYmAwTAEGMPU-tBOG6mZXM",
-                    "short_id": "c0ed769713f54ce0"
-                }
+                "disable_sni": false,
+                "server_name": "www.google.com",
+                "insecure": true,
+                "alpn": [
+                    "h3",
+                    "spdy\/3.1"
+                ]
             }
         },
         {
-            "tag": "direct",
-            "type": "direct"
+            "tag": "🇺🇸 United States , Dallas | 41",
+            "type": "shadowsocks",
+            "server": "23.134.94.175",
+            "server_port": 8119,
+            "method": "aes-256-gcm",
+            "password": "cdBIDV42DCwnfIN",
+            "plugin": "",
+            "plugin_opts": ""
         },
         {
-            "tag": "bypass",
-            "type": "direct"
+            "tag": "🇺🇸 United States , Dallas | 42",
+            "type": "shadowsocks",
+            "server": "23.134.94.141",
+            "server_port": 6697,
+            "method": "aes-256-gcm",
+            "password": "TEzjfAYq2IjtuoS",
+            "plugin": "",
+            "plugin_opts": ""
         },
         {
-            "tag": "block",
-            "type": "block"
+            "tag": "🇺🇸 United States , Georgia | 43",
+            "type": "shadowsocks",
+            "server": "162.247.153.108",
+            "server_port": 28896,
+            "method": "chacha20-ietf-poly1305",
+            "password": "jFDpUoKUDZPEGTBJRiLZgo",
+            "plugin": "",
+            "plugin_opts": ""
         },
         {
-            "tag": "dns-out",
-            "type": "dns"
+            "tag": "🇺🇸 United States , Maryland | 44",
+            "type": "shadowsocks",
+            "server": "205.134.180.137",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "g13S7doXar0A",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , Maryland | 45",
+            "type": "shadowsocks",
+            "server": "205.134.180.145",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "hgLCgfLRgB6d",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , Maryland | 46",
+            "type": "shadowsocks",
+            "server": "205.134.180.147",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "9Bvkw5aupNy8",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , New Jersey | 47",
+            "type": "shadowsocks",
+            "server": "194.116.173.21",
+            "server_port": 9038,
+            "method": "aes-256-cfb",
+            "password": "gYCYXfkUQEs2TaJQ",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , New Jersey | 48",
+            "type": "shadowsocks",
+            "server": "2508join.outline-vpn.cloud",
+            "server_port": 8388,
+            "method": "chacha20-ietf-poly1305",
+            "password": "YaXvybxrP9HL79Gfltym9bw\/5QIQAW\/f",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , Secaucus | 49",
+            "type": "shadowsocks",
+            "server": "5.8.41.89",
+            "server_port": 8388,
+            "method": "chacha20-ietf-poly1305",
+            "password": "YaXvybxrP9HL79Gfltym9bw\/5QIQAW\/f",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "tag": "🇺🇸 United States , Washington D.C. | 50",
+            "type": "shadowsocks",
+            "server": "185.123.101.241",
+            "server_port": 989,
+            "method": "aes-256-cfb",
+            "password": "f8f7aCzcPKbsF8p3",
+            "plugin": "",
+            "plugin_opts": ""
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
+        },
+        {
+            "type": "direct",
+            "tag": "bypass"
+        },
+        {
+            "type": "block",
+            "tag": "block"
+        },
+        {
+            "type": "dns",
+            "tag": "dns-out"
         }
     ],
     "route": {
-        "auto_detect_interface": true,
-        "override_android_vpn": true,
-        "final": "proxy",
         "geoip": {
             "download_url": "https:\/\/github.com\/chocolate4u\/Iran-sing-box-rules\/releases\/latest\/download\/geoip.db",
             "download_detour": "direct"
@@ -1023,37 +779,21 @@
         },
         "rules": [
             {
-                "outbound": "dns-out",
-                "port": [
-                    53
-                ]
-            },
-            {
-                "inbound": [
-                    "dns-in"
-                ],
+                "port": 53,
                 "outbound": "dns-out"
             },
             {
-                "domain_suffix": [
-                    "ir"
-                ],
-                "outbound": "bypass"
+                "inbound": "dns-in",
+                "outbound": "dns-out"
             },
             {
-                "geoip": [
-                    "ir"
-                ],
-                "ip_cidr": [
-                    "192.168.0.0\/16"
-                ],
-                "outbound": "bypass"
-            },
-            {
+                "domain_suffix": "ir",
                 "geosite": [
                     "ir",
                     "category-ir"
                 ],
+                "geoip": "ir",
+                "ip_cidr": "192.168.0.0\/16",
                 "outbound": "bypass"
             },
             {
@@ -1062,21 +802,29 @@
                     "category-ads-ir",
                     "category-public-tracker"
                 ],
-                "outbound": "block"
-            },
-            {
-                "ip_cidr": [
+                "source_ip_cidr": [
                     "224.0.0.0\/3",
                     "ff00::\/8",
                     "10.10.34.34\/29"
                 ],
-                "source_ip_cidr": [
+                "ip_cidr": [
                     "224.0.0.0\/3",
                     "ff00::\/8",
                     "10.10.34.34\/29"
                 ],
                 "outbound": "block"
             }
-        ]
+        ],
+        "final": "proxy",
+        "auto_detect_interface": true,
+        "override_android_vpn": true
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "SingCache.db",
+            "cache_id": "USUKConfig",
+            "store_fakeip": true
+        }
     }
 }
