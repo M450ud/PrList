@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14020919 - 1825
+//  Update time:   14020921 - 0002
 {
     "log": {
         "level": "debug",
@@ -5371,7 +5371,6 @@
             {
                 "domain_suffix": "ir",
                 "geosite": [
-                    "ir",
                     "category-ir"
                 ],
                 "geoip": "ir",
@@ -5381,13 +5380,7 @@
             {
                 "geosite": [
                     "category-ads-all",
-                    "category-ads-ir",
                     "category-public-tracker"
-                ],
-                "source_ip_cidr": [
-                    "224.0.0.0\/3",
-                    "ff00::\/8",
-                    "10.10.34.34\/29"
                 ],
                 "ip_cidr": [
                     "224.0.0.0\/3",
