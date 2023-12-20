@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14020930 - 0005
+//  Update time:   14020930 - 0018
 {
     "log": {
         "level": "info",
@@ -9013,48 +9013,64 @@
                 "tag": "geosite-ir",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-ir.srs"
             },
             {
                 "tag": "geosite-category-ads-all",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ads-all.srs"
             },
             {
                 "tag": "geosite-malware",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-malware.srs"
             },
             {
                 "tag": "geosite-phishing",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-phishing.srs"
             },
             {
                 "tag": "geosite-cryptominers",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-cryptominers.srs"
             },
             {
                 "tag": "geoip-ir",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-ir.srs"
             },
             {
                 "tag": "geoip-malware",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-malware.srs"
             },
             {
                 "tag": "geoip-phishing",
                 "type": "remote",
                 "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-phishing.srs"
             }
         ],
