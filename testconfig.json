@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021002 - 2122
+//  Update time:   14021002 - 2139
 {
     "log": {
         "level": "info",
@@ -40,17 +40,17 @@
             {
                 "outbound": "direct",
                 "server": "dns-remote",
-                "rewrite_ttl": 200
+                "rewrite_ttl": 10
             },
             {
                 "outbound": "direct",
                 "server": "dns-direct",
-                "rewrite_ttl": 20
+                "rewrite_ttl": 10
             },
             {
                 "outbound": "any",
                 "server": "dns-direct",
-                "rewrite_ttl": 20
+                "rewrite_ttl": 10
             }
         ],
         "final": "dns-remote",
