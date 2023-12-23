@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021002 - 2302
+//  Update time:   14021002 - 2323
 {
   "log": {
     "level": "info",
@@ -283,7 +283,7 @@
       ],
       "url": "https://raw.githubusercontent.com/M450ud/PrList/main/urltest.txt",
       "interval": "3m0s",
-      "idle_timeout": "5m0s",
+      "idle_timeout": "3m0s",
       "interrupt_exist_connections": true
     },
     {
