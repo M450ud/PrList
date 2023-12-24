@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021003 - 2229
+//  Update time:   14021003 - 2246
 {
     "log": {
         "level": "warning",
@@ -41,17 +41,17 @@
                 "outbound": "direct",
                 "server": "dns-remote",
                 "disable_cache": false,
-                "rewrite_ttl": 100
+                "rewrite_ttl": 20
             },
             {
                 "outbound": "direct",
                 "server": "dns-direct",
-                "rewrite_ttl": 100
+                "rewrite_ttl": 10
             },
             {
                 "outbound": "any",
                 "server": "dns-direct",
-                "rewrite_ttl": 20
+                "rewrite_ttl": 10
             }
         ],
         "final": "dns-remote",
@@ -891,7 +891,7 @@
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "3m",
             "tolerance": 0,
-            "idle_timeout": "30m",
+            "idle_timeout": "5m",
             "interrupt_exist_connections": true
         },
         {
