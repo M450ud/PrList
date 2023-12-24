@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021003 - 2339
+//  Update time:   14021003 - 2354
 {
     "log": {
         "level": "warning",
@@ -11531,8 +11531,17 @@
     "route": {
         "rules": [
             {
-                "ip_is_private": true,
+                "source_ip_cidr": [
+                    "192.168.0.0\/16",
+                    "172.19.0.1\/30"
+                ],
                 "outbound": "direct"
+            },
+            {
+                "source_ip_cidr": [
+                    "10.10.34.34\/29"
+                ],
+                "outbound": "block"
             },
             {
                 "rule_set": [
@@ -11549,6 +11558,14 @@
                     "geoip-ir"
                 ],
                 "outbound": "direct"
+            },
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [],
+                "server": "local",
+                "disable_cache": false,
+                "rewrite_ttl": 100
             }
         ],
         "rule_set": [
