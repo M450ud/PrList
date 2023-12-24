@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021003 - 2306
+//  Update time:   14021003 - 2322
 {
     "log": {
         "level": "warning",
@@ -10,16 +10,12 @@
             {
                 "tag": "dns-remote",
                 "address": "https:\/\/1.1.1.1\/dns-query",
-                "address_resolver": "dns-direct",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4"
+                "address_resolver": "dns-direct"
             },
             {
                 "tag": "dns-direct",
-                "address": "https://1.1.1.1/dns-query",
+                "address": "https:\/\/1.1.1.1\/dns-query",
                 "address_resolver": "dns-local",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4",
                 "detour": "direct"
             },
             {
@@ -891,7 +887,7 @@
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "3m",
             "tolerance": 0,
-            "idle_timeout": "5m",
+            "idle_timeout": "3m",
             "interrupt_exist_connections": true
         },
         {
@@ -11634,7 +11630,7 @@
             "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
             "external_ui_download_detour": "direct",
             "secret": "",
-            "default_mode": "rule"
+            "default_mode": "URL-TEST"
         },
         "cache_file": {
             "enabled": true,
