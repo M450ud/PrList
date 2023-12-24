@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021003 - 2356
+//  Update time:   14021004 - 0003
 {
     "log": {
         "level": "warning",
@@ -11561,7 +11561,8 @@
             },
             {
                 "type": "logical",
-                "mode": "and"
+                "mode": "and",
+                "rules": []
             }
         ],
         "rule_set": [
