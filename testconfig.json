@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:   14021004 - 0003
+//  Update time:   14021004 - 0006
 {
     "log": {
         "level": "warning",
@@ -11558,11 +11558,6 @@
                     "geoip-ir"
                 ],
                 "outbound": "direct"
-            },
-            {
-                "type": "logical",
-                "mode": "and",
-                "rules": []
             }
         ],
         "rule_set": [
