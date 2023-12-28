@@ -904,7 +904,7 @@
             ],
             "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/config.json",
             "interval": "5m",
-            "tolerance": 100,
+            "tolerance": 0,
             "interrupt_exist_connections": true
         },
         {
