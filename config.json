@@ -16,7 +16,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "https:\/\/1.1.1.1\/dns-query",
+                "address": "1.1.1.1",
                 "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
