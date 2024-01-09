@@ -1,8 +1,9 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:  14021007 - 2311
+//  Update time:   14021019 - 2030
 {
     "log": {
         "level": "warning",
+        "output": "SB.log",
         "timestamp": true
     },
     "dns": {
@@ -16,7 +17,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "1.1.1.1",
+                "address": "tcp:\/\/1.1.1.1",
                 "address_resolver": "dns-local",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
@@ -44,23 +45,18 @@
             },
             {
                 "outbound": "any",
-                "server": "dns-direct",
+                "server": "dns-remote",
                 "rewrite_ttl": 20
             }
         ],
-        "final": "dns-remote",
-        "reverse_mapping": true,
-        "strategy": "prefer_ipv4",
-        "disable_expire": true
+        "final": "dns-remote"
     },
     "inbounds": [
         {
             "type": "direct",
             "tag": "dns-in",
             "listen": "0.0.0.0",
-            "listen_port": 6450,
-            "override_address": "4.2.2.2",
-            "override_port": 53
+            "listen_port": 6450
         },
         {
             "type": "tun",
@@ -71,7 +67,8 @@
             "auto_route": true,
             "strict_route": true,
             "stack": "mixed",
-            "sniff": true
+            "sniff": true,
+            "sniff_override_destination": true
         },
         {
             "type": "mixed",
@@ -83,10 +80,10 @@
     ],
     "outbounds": [
         {
-            "tag": "proxy",
+            "tag": "All Proxies",
             "type": "selector",
             "outbounds": [
-                "URL-TEST",
+                "URL Delay",
                 "🇬🇧 United Kingdom , Wales | 1",
                 "🇬🇧 United Kingdom , Scotland | 2",
                 "🇬🇧 United Kingdom , Wales | 3",
@@ -292,10 +289,12 @@
                 "🇺🇸 United States , California | 203",
                 "🇺🇸 United States , California | 204",
                 "🇺🇸 United States , California | 205"
-            ]
+            ],
+            "default": "URL Delay",
+            "interrupt_exist_connections": true
         },
         {
-            "tag": "URL-TEST",
+            "tag": "URL Delay",
             "type": "urltest",
             "outbounds": [
                 "🇬🇧 United Kingdom , Wales | 1",
@@ -504,9 +503,11 @@
                 "🇺🇸 United States , California | 204",
                 "🇺🇸 United States , California | 205"
             ],
-            "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/config.json",
+            "url": "https:\/\/raw.githubusercontent.com\/M450ud\/PrList\/main\/urltest.txt",
             "interval": "5m",
-            "tolerance": 0
+            "tolerance": 0,
+            "idle_timeout": "5m",
+            "interrupt_exist_connections": true
         },
         {
             "tag": "🇬🇧 United Kingdom , Wales | 1",
@@ -5619,68 +5620,100 @@
         }
     ],
     "route": {
-        "geoip": {
-            "download_url": "https:\/\/github.com\/chocolate4u\/Iran-sing-box-rules\/releases\/latest\/download\/geoip.db",
-            "download_detour": "direct"
-        },
-        "geosite": {
-            "download_url": "https:\/\/github.com\/chocolate4u\/Iran-sing-box-rules\/releases\/latest\/download\/geosite.db",
-            "download_detour": "direct"
-        },
         "rules": [
             {
-                "port": 53,
-                "outbound": "dns-out"
-            },
-            {
-                "inbound": "dns-in",
-                "outbound": "dns-out"
-            },
-            {
-                "domain_suffix": "ir",
-                "geosite": [
-                    "ir",
-                    "category-ir"
-                ],
-                "geoip": "ir",
-                "ip_cidr": "192.168.0.0\/16",
-                "outbound": "bypass"
-            },
-            {
-                "geosite": [
-                    "category-ads-all",
-                    "category-ads-ir",
-                    "category-public-tracker",
-                    "cryptominers",
-                    "phishing",
-                    "malware"
-                ],
-                "source_ip_cidr": [
-                    "224.0.0.0\/3",
-                    "ff00::\/8",
-                    "10.10.34.34\/29"
-                ],
                 "ip_cidr": [
-                    "224.0.0.0\/3",
-                    "ff00::\/8",
                     "10.10.34.34\/29"
                 ],
                 "outbound": "block"
+            },
+            {
+                "rule_set": [
+                    "geosite-category-ads-all",
+                    "geosite-phishing",
+                    "geosite-category-public-tracker",
+                    "geoip-phishing"
+                ],
+                "outbound": "block"
+            },
+            {
+                "ip_cidr": [
+                    "192.168.0.0\/16"
+                ],
+                "rule_set": [
+                    "geosite-ir",
+                    "geoip-ir"
+                ],
+                "outbound": "direct"
             }
         ],
-        "final": "proxy",
+        "rule_set": [
+            {
+                "tag": "geosite-ir",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-ir.srs"
+            },
+            {
+                "tag": "geosite-category-ads-all",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ads-all.srs"
+            },
+            {
+                "tag": "geosite-category-public-tracker",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-public-tracker.srs"
+            },
+            {
+                "tag": "geosite-phishing",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-phishing.srs"
+            },
+            {
+                "tag": "geoip-ir",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-ir.srs"
+            },
+            {
+                "tag": "geoip-phishing",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-phishing.srs"
+            }
+        ],
+        "final": "All Proxies",
         "auto_detect_interface": true,
         "override_android_vpn": true
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "0.0.0.0:9090",
+            "external_controller": "127.0.0.1:9090",
             "external_ui": "Yacd",
             "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
             "external_ui_download_detour": "direct",
-            "default_mode": "rule",
-            "store_selected": true,
-            "cache_file": "SingboxCache.db"
+            "secret": "",
+            "default_mode": "Rule"
+        },
+        "cache_file": {
+            "enabled": true,
+            "path": "SingCache.db",
+            "cache_id": "SB"
         }
     }
 }
