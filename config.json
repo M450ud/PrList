@@ -24,7 +24,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "tcp:\/\/1.0.0.1",
+                "address": "1.0.0.1",
                 "address_resolver": "dns-local",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
