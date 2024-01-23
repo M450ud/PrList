@@ -935,7 +935,7 @@
             "url": "https:\/\/cp.cloudflare.com\/",
             "tolerance": 0,
             "interval": "10m",
-            "idle_timeout": "13m",
+            "idle_timeout": "10m",
             "interrupt_exist_connections": true
         },
         {
