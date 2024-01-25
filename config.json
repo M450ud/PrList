@@ -10057,7 +10057,7 @@
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-phishing.srs"
             }
         ],
-        "final": "Proxy",
+        "final": "Proxies status - ",
         "auto_detect_interface": true,
         "override_android_vpn": true
     },
