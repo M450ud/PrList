@@ -1,10 +1,9 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:  14021105 - 2017
+//  Update time:  14021102 - 2041
 {
     "log": {
-        "disabled": false,
         "level": "warning",
-        "output": "SingBox.log",
+        "output": "Sing-box.log",
         "timestamp": true
     },
     "dns": {
@@ -25,7 +24,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "tcp:\/\/1.0.0.1",
+                "address": "tcp:\/\/1.1.1.1",
                 "address_resolver": "dns-local",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
@@ -57,17 +56,9 @@
                 "outbound": "block"
             },
             {
-                "clash_mode": "🌍 Global Proxy",
-                "server": "dns-remote"
-            },
-            {
-                "clash_mode": "Rules (Bypass 🇮🇷 )",
-                "server": "dns-doh"
-            },
-            {
                 "outbound": "any",
                 "server": "dns-remote",
-                "rewrite_ttl": 20
+                "rewrite_ttl": 50
             }
         ],
         "reverse_mapping": true,
@@ -943,8 +934,8 @@
             ],
             "url": "https:\/\/cp.cloudflare.com\/",
             "tolerance": 0,
-            "interval": "20m",
-            "idle_timeout": "20m",
+            "interval": "10m",
+            "idle_timeout": "10m",
             "interrupt_exist_connections": true
         },
         {
@@ -9901,9 +9892,11 @@
                 "ip_cidr": [
                     "10.10.34.34\/29"
                 ],
+                "outbound": "block"
+            },
+            {
                 "rule_set": [
                     "geosite-category-ads-all",
-                    "geosite-category-ads-ir.srs",
                     "geosite-phishing",
                     "geosite-category-public-tracker",
                     "geoip-phishing"
@@ -9914,92 +9907,14 @@
                 "ip_cidr": [
                     "192.168.0.0\/16"
                 ],
-                "outbound": "direct"
-            },
-            {
-                "clash_mode": "🌍 Global Proxy",
-                "outbound": "Proxies status - "
-            },
-            {
-                "clash_mode": "Rules (Bypass 🇮🇷 )",
                 "rule_set": [
                     "geosite-ir",
-                    "geosite-category-ir.srs",
                     "geoip-ir"
-                ],
-                "package_name": [
-                    "mrz.hh.ah",
-                    "com.arzdigitalnew",
-                    "com.nar.bimito",
-                    "ir.balad",
-                    "ir.nasim",
-                    "ir.basalam.app",
-                    "com.farsitel.bazaar",
-                    "com.digikala",
-                    "com.mydigipay.app.android",
-                    "ir.divar",
-                    "ir.eitaa.messenger",
-                    "com.fidibo.app",
-                    "com.aparat.filimo",
-                    "com.sabaidea.filimo.tv",
-                    "com.gapafzar.messenger",
-                    "mob.banking.android.gardesh",
-                    "ir.karafarinbank.digital.mb",
-                    "net.iGap",
-                    "com.bki.mobilebanking.android",
-                    "kifpool.me",
-                    "com.taxsee.taxsee",
-                    "com.myirancell",
-                    "ir.mci.ecareapp",
-                    "ir.gov.mygov",
-                    "ir.mservices.market",
-                    "ir.rightel.myrightel",
-                    "org.rajman.neshan.traffic.tehran.navigator",
-                    "market.nobitex",
-                    "market.nobitex.testnet",
-                    "com.okala",
-                    "mob.banking.android.pasargad",
-                    "com.ramzinex.ramzinex",
-                    "mob.banking.android.resalat",
-                    "app.rbmain.a",
-                    "com.sheypoor.mobile",
-                    "cab.snapp.passenger",
-                    "cab.snapp.driver",
-                    "com.zoodfood.android",
-                    "com.snappmarket",
-                    "mobi.mmdt.ottplus",
-                    "taxi.tap30.passenger",
-                    "taxi.tap30.driver",
-                    "co.fardad.android.metro",
-                    "tv.telewebion",
-                    "net.telewebion",
-                    "ir.torob",
-                    "com.sibche.aspardproject.app",
-                    "com.khorasannews.latestnews",
-                    "com.mobiliha.badesaba",
-                    "ir.bmi.bam.nativeweb",
-                    "com.maskanmobilebank",
-                    "com.ada.mbank.mehr",
-                    "com.maskanmobilebank",
-                    "ir.samen.khadamatbank",
-                    "com.mehraeen.airpollution",
-                    "ir.tejaratbank.tata.mobile.android.tejarat",
-                    "com.pmb.mobile",
-                    "ir.bmi.bam.nativeweb",
-                    "com.ada.mbank.parsian"
                 ],
                 "outbound": "direct"
             }
         ],
         "rule_set": [
-            {
-                "tag": "geosite-category-ir.srs",
-                "type": "remote",
-                "format": "binary",
-                "download_detour": "direct",
-                "update_interval": "7d",
-                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ir.srs"
-            },
             {
                 "tag": "geosite-ir",
                 "type": "remote",
@@ -10007,14 +9922,6 @@
                 "download_detour": "direct",
                 "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-ir.srs"
-            },
-            {
-                "tag": "geosite-category-ads-ir.srs",
-                "type": "remote",
-                "format": "binary",
-                "download_detour": "direct",
-                "update_interval": "7d",
-                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ads-ir.srs"
             },
             {
                 "tag": "geosite-category-ads-all",
@@ -10057,18 +9964,18 @@
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-phishing.srs"
             }
         ],
-        "final": "Proxies status - ",
+        "final": "Proxy",
         "auto_detect_interface": true,
         "override_android_vpn": true
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "0.0.0.0:9090",
+            "external_controller": "127.0.0.1:9090",
             "external_ui": "Yacd",
             "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
             "external_ui_download_detour": "direct",
             "secret": "",
-            "default_mode": "Rules (Bypass 🇮🇷 )"
+            "default_mode": "rule"
         },
         "cache_file": {
             "enabled": true,
