@@ -1,7 +1,8 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:  14021102 - 2041
+//  Update time:  14021110 - 2036
 {
     "log": {
+        "disabled": false,
         "level": "warning",
         "output": "Sing-box.log",
         "timestamp": true
@@ -10,23 +11,21 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "tls:\/\/1.1.1.1",
-                "strategy": "prefer_ipv4",
-                "detour": "Proxies status - ",
-                "address_resolver": "dns-direct"
+                "address": "https:\/\/1.1.1.1\/dns-query",
+                "strategy": "ipv4_only",
+                "address_resolver": "dns-tls"
             },
             {
-                "tag": "dns-doh",
-                "address": "https:\/\/1.1.1.1\/dns-query",
-                "strategy": "prefer_ipv4",
-                "detour": "Proxies status - ",
+                "tag": "dns-tls",
+                "address": "tls:\/\/1.1.1.1",
+                "strategy": "ipv4_only",
                 "address_resolver": "dns-direct"
             },
             {
                 "tag": "dns-direct",
-                "address": "tcp:\/\/1.1.1.1",
+                "address": "9.9.9.9",
                 "address_resolver": "dns-local",
-                "strategy": "prefer_ipv4",
+                "strategy": "ipv4_only",
                 "detour": "direct"
             },
             {
@@ -40,10 +39,6 @@
         ],
         "rules": [
             {
-                "domain_suffix": "ir",
-                "server": "dns-direct"
-            },
-            {
                 "outbound": "direct",
                 "server": "dns-direct",
                 "rewrite_ttl": 20
@@ -56,14 +51,23 @@
                 "outbound": "block"
             },
             {
+                "clash_mode": "🌍 Global Proxy",
+                "server": "dns-remote"
+            },
+            {
+                "clash_mode": "Rules (Bypass 🇮🇷 )",
+                "server": "dns-tls"
+            },
+            {
                 "outbound": "any",
-                "server": "dns-remote",
-                "rewrite_ttl": 50
+                "server": "dns-direct",
+                "rewrite_ttl": 20
             }
         ],
         "reverse_mapping": true,
         "disable_cache": false,
-        "strategy": "prefer_ipv4",
+        "strategy": "ipv4_only",
+        "final": "dns-remote",
         "disable_expire": true,
         "independent_cache": true
     },
@@ -71,19 +75,22 @@
         {
             "type": "direct",
             "tag": "dns-in",
+            "override_address": "1.0.0.1",
+            "override_port": 53,
             "listen": "0.0.0.0",
             "listen_port": 6450
         },
         {
             "type": "tun",
             "tag": "tun-in",
-            "interface_name": "tun0",
+            "interface_name": "SingboxTUN",
             "mtu": 9000,
             "inet4_address": "172.19.0.1\/30",
+            "inet6_address": "fdfe:dcba:9876::1\/126",
             "auto_route": true,
             "strict_route": true,
-            "stack": "mixed",
-            "domain_strategy": "prefer_ipv4",
+            "stack": "system",
+            "domain_strategy": "",
             "endpoint_independent_nat": true,
             "sniff": true,
             "sniff_override_destination": false
@@ -91,10 +98,10 @@
         {
             "type": "mixed",
             "tag": "mixed-in",
-            "listen": "::",
+            "listen": "0.0.0.0",
             "listen_port": 2080,
+            "domain_strategy": "",
             "sniff_override_destination": false,
-            "domain_strategy": "prefer_ipv4",
             "sniff": true
         }
     ],
@@ -103,7 +110,7 @@
             "tag": "Proxy",
             "type": "selector",
             "outbounds": [
-                "Proxies status - ",
+                "Auto Select",
                 "🇦🇱 Albania , Tirana | 1",
                 "🇦🇷 Argentina , Buenos Aires | 2",
                 "🇦🇹 Austria , Vienna | 3",
@@ -515,10 +522,10 @@
                 "🇿🇦 South Africa , Johannesburg | 409",
                 "🇿🇦 South Africa Cape Town | 410"
             ],
-            "default": "Proxies status - "
+            "default": "Auto Select"
         },
         {
-            "tag": "Proxies status - ",
+            "tag": "Auto Select",
             "type": "urltest",
             "outbounds": [
                 "🇦🇱 Albania , Tirana | 1",
@@ -9895,8 +9902,27 @@
                 "outbound": "block"
             },
             {
+                "outbound": "dns-out",
+                "port": [
+                    53
+                ]
+            },
+            {
+                "domain_suffix": [
+                    ".ir"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "inbound": [
+                    "dns-in"
+                ],
+                "outbound": "dns-out"
+            },
+            {
                 "rule_set": [
                     "geosite-category-ads-all",
+                    "geosite-category-ads-ir.srs",
                     "geosite-phishing",
                     "geosite-category-public-tracker",
                     "geoip-phishing"
@@ -9907,14 +9933,92 @@
                 "ip_cidr": [
                     "192.168.0.0\/16"
                 ],
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "🌍 Global Proxy",
+                "outbound": "Manual"
+            },
+            {
+                "clash_mode": "Rules (Bypass 🇮🇷 )",
                 "rule_set": [
                     "geosite-ir",
+                    "geosite-category-ir.srs",
                     "geoip-ir"
+                ],
+                "package_name": [
+                    "mrz.hh.ah",
+                    "com.arzdigitalnew",
+                    "com.nar.bimito",
+                    "ir.balad",
+                    "ir.nasim",
+                    "ir.basalam.app",
+                    "com.farsitel.bazaar",
+                    "com.digikala",
+                    "com.mydigipay.app.android",
+                    "ir.divar",
+                    "ir.eitaa.messenger",
+                    "com.fidibo.app",
+                    "com.aparat.filimo",
+                    "com.sabaidea.filimo.tv",
+                    "com.gapafzar.messenger",
+                    "mob.banking.android.gardesh",
+                    "ir.karafarinbank.digital.mb",
+                    "net.iGap",
+                    "com.bki.mobilebanking.android",
+                    "kifpool.me",
+                    "com.taxsee.taxsee",
+                    "com.myirancell",
+                    "ir.mci.ecareapp",
+                    "ir.gov.mygov",
+                    "ir.mservices.market",
+                    "ir.rightel.myrightel",
+                    "org.rajman.neshan.traffic.tehran.navigator",
+                    "market.nobitex",
+                    "market.nobitex.testnet",
+                    "com.okala",
+                    "mob.banking.android.pasargad",
+                    "com.ramzinex.ramzinex",
+                    "mob.banking.android.resalat",
+                    "app.rbmain.a",
+                    "com.sheypoor.mobile",
+                    "cab.snapp.passenger",
+                    "cab.snapp.driver",
+                    "com.zoodfood.android",
+                    "com.snappmarket",
+                    "mobi.mmdt.ottplus",
+                    "taxi.tap30.passenger",
+                    "taxi.tap30.driver",
+                    "co.fardad.android.metro",
+                    "tv.telewebion",
+                    "net.telewebion",
+                    "ir.torob",
+                    "com.sibche.aspardproject.app",
+                    "com.khorasannews.latestnews",
+                    "com.mobiliha.badesaba",
+                    "ir.bmi.bam.nativeweb",
+                    "com.maskanmobilebank",
+                    "com.ada.mbank.mehr",
+                    "com.maskanmobilebank",
+                    "ir.samen.khadamatbank",
+                    "com.mehraeen.airpollution",
+                    "ir.tejaratbank.tata.mobile.android.tejarat",
+                    "com.pmb.mobile",
+                    "ir.bmi.bam.nativeweb",
+                    "com.ada.mbank.parsian"
                 ],
                 "outbound": "direct"
             }
         ],
         "rule_set": [
+            {
+                "tag": "geosite-category-ir.srs",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ir.srs"
+            },
             {
                 "tag": "geosite-ir",
                 "type": "remote",
@@ -9922,6 +10026,14 @@
                 "download_detour": "direct",
                 "update_interval": "7d",
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-ir.srs"
+            },
+            {
+                "tag": "geosite-category-ads-ir.srs",
+                "type": "remote",
+                "format": "binary",
+                "download_detour": "direct",
+                "update_interval": "7d",
+                "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geosite-category-ads-ir.srs"
             },
             {
                 "tag": "geosite-category-ads-all",
@@ -9964,18 +10076,18 @@
                 "url": "https:\/\/raw.githubusercontent.com\/Chocolate4U\/Iran-sing-box-rules\/rule-set\/geoip-phishing.srs"
             }
         ],
-        "final": "Proxy",
+        "final": "Manual",
         "auto_detect_interface": true,
         "override_android_vpn": true
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "127.0.0.1:9090",
+            "external_controller": "0.0.0.0:9090",
             "external_ui": "Yacd",
             "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
             "external_ui_download_detour": "direct",
             "secret": "",
-            "default_mode": "rule"
+            "default_mode": "🌍 Global Proxy"
         },
         "cache_file": {
             "enabled": true,
