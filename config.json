@@ -1,5 +1,5 @@
 //This config generated using SingBoxer code from YEBEKHE https://github.com/yebekhe/singboxer
-//  Update time:  14021110 - 2041
+//  Update time:  14021110 - 2320
 {
     "log": {
         "disabled": false,
@@ -11,15 +11,16 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "https:\/\/1.1.1.1\/dns-query",
-                "strategy": "ipv4_only",
-                "address_resolver": "dns-tls"
-            },
-            {
-                "tag": "dns-tls",
                 "address": "tls:\/\/1.1.1.1",
                 "strategy": "ipv4_only",
-                "address_resolver": "dns-direct"
+                "detour": "Manual"
+            },
+            {
+                "tag": "dns-doh",
+                "address": "https:\/\/1.1.1.1\/dns-query",
+                "strategy": "ipv4_only",
+                "detour": "Manual",
+                "address_resolver": "dns-remote"
             },
             {
                 "tag": "dns-direct",
@@ -56,7 +57,7 @@
             },
             {
                 "clash_mode": "Rules (Bypass 🇮🇷 )",
-                "server": "dns-tls"
+                "server": "dns-doh"
             },
             {
                 "outbound": "any",
@@ -65,10 +66,8 @@
             }
         ],
         "reverse_mapping": true,
-        "disable_cache": false,
         "strategy": "ipv4_only",
         "final": "dns-remote",
-        "disable_expire": true,
         "independent_cache": true
     },
     "inbounds": [
@@ -89,7 +88,7 @@
             "inet6_address": "fdfe:dcba:9876::1\/126",
             "auto_route": true,
             "strict_route": true,
-            "stack": "system",
+            "stack": "mixed",
             "domain_strategy": "",
             "endpoint_independent_nat": true,
             "sniff": true,
@@ -941,8 +940,8 @@
             ],
             "url": "https:\/\/cp.cloudflare.com\/",
             "tolerance": 0,
-            "interval": "10m",
-            "idle_timeout": "10m",
+            "interval": "20m",
+            "idle_timeout": "20m",
             "interrupt_exist_connections": true
         },
         {
