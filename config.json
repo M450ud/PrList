@@ -20,7 +20,7 @@
                 "address": "https:\/\/1.1.1.1\/dns-query",
                 "strategy": "ipv4_only",
                 "detour": "Manual",
-                "address_resolver": "dns-remote"
+                "address_resolver": "dns-direct"
             },
             {
                 "tag": "dns-direct",
