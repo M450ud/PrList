@@ -46,3 +46,10 @@ vmess://d5e16b83-7b5c-45ea-d749-d6f6ad214447@141.11.251.231:52728?encryption=aut
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@52.79.52.119:443#%F0%9F%94%92%20SS-TCP-NA%20%F0%9F%87%B0%F0%9F%87%B7%20KR-52.79.52.119:443
 ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@34.219.80.203:443#%F0%9F%94%92%20SS-TCP-NA%20%F0%9F%87%BA%F0%9F%87%B8%20US-34.219.80.203:443
 trojan://FuUaWS3YWG@38.175.201.156:2053?security=tls&sni=Crunch.floorshoping22.com&alpn=h2&allowInsecure=1&fp=chrome&type=grpc#%F0%9F%94%92%20TR-GRPC-TLS%20%F0%9F%87%BA%F0%9F%87%B8%20US-38.175.201.156:2053
+vmess://dfbbc8de-8a4f-407d-8069-6de38d83c4e1@95.179.186.161:80?encryption=auto&security=none&fp=firefox&type=ws&path=/WgCmp8pxRWBtLTlTL#%F0%9F%87%B3%F0%9F%87%B1%20Netherlands%20,%20Amsterdam
+vmess://112ac36f-3f53-4e26-8371-d25c028e1b9a@5.196.29.123:2082?encryption=auto&security=none&fp=firefox&type=ws&path=/&host=s1c.v2.v001sss.xyz#%F0%9F%87%AB%F0%9F%87%B7%20France%20,%20Roubaix
+ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@35.88.126.102:443#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20Portland
+vmess://418048af-a293-4b99-9b0c-98ca3580dd24@142.0.134.244:45017?encryption=auto&security=none&fp=firefox&type=tcp#%F0%9F%87%A8%F0%9F%87%B3%20China
+vmess://418048af-a293-4b99-9b0c-98ca3580dd24@198.2.218.106:41400?encryption=none&security=none&fp=firefox&type=tcp#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20Washington
+vmess://418048af-a293-4b99-9b0c-98ca3580dd24@198.2.218.105:41400?encryption=none&security=none&fp=firefox&type=tcp#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20,%20Washington
+vmess://418048af-a293-4b99-9b0c-98ca3580dd24@112.132.212.19:50004?encryption=auto&security=none&fp=firefox&type=tcp#%F0%9F%87%A8%F0%9F%87%B3%20China
