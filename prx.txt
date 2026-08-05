@@ -1,4 +1,3 @@
-hysteria2://TelegramVPNjey@179.61.251.253:37003?obfs-password=83v9muumcyikh5ch&security=tls&sni=de.jey.cc.cd&alpn=h3#%F0%9F%87%A9%F0%9F%87%AA%20Germany,%20Frankfurt%20am%20Main
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.47:8080#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands,%20Amsterdam
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpiQm5WMzZ0enQ3TUtWNzVhRFpUYnpH@141.227.152.129:8388#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands,%20Amsterdam
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.208:8080#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands,%20Amsterdam
