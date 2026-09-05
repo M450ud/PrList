@@ -76,6 +76,7 @@ trojan://humanity@5.78.92.27:8443?security=tls&sni=www.calmlunch.com&type=ws&hos
 trojan://humanity@185.220.100.168:443?security=tls&sni=www.calmlunch.com&type=ws&host=www.calmlunch.com&path=/assignment#%F0%9F%87%A9%F0%9F%87%AA%20Germany,%20Ha%C3%9Ffurt
 trojan://humanity@89.150.34.41:2053?security=tls&sni=www.calmlunch.com&type=ws&host=www.calmlunch.com&path=/assignment#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands,%20Amsterdam
 trojan://humanity@188.42.145.180:443?security=tls&sni=www.volumeroot.com&alpn=http/1.1&fp=chrome&type=ws&host=www.volumeroot.com&path=/assignment#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands,%20Amsterdam
+trojan://02cd3bac-2a78-4dbb-82b9-6b64084ddd8e@107.150.105.84:46292?security=tls&sni=www.microsoft.com&allowInsecure=true&fp=chrome#%F0%9F%87%BA%F0%9F%87%B8%20United%20States,%20Los%20Angeles
 trojan://humanity@213.182.199.137:443?security=tls&sni=www.pleadcourt.org&alpn=http/1.1&fp=chrome&type=ws&host=www.pleadcourt.org&path=/assignment#%F0%9F%87%AD%F0%9F%87%B7%20Croatia,%20Zagreb
 trojan://humanity@172.64.152.23:443?security=tls&sni=www.calmlunch.com&type=ws&host=www.calmlunch.com&path=/assignment#%F0%9F%87%A8%F0%9F%87%A6%20Canada,%20Toronto
 trojan://humanity@165.215.250.14:443#%F0%9F%87%BA%F0%9F%87%B8%20United%20States,%20Ann%20Arbor
